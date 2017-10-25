@@ -1,6 +1,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <time.h>
+#include <iso646.h>
 //# include <conio.h>   // necessário para as funções clrscr e getch
 //int palio, uno, gol, stilo, bmw;
 time_t t;
@@ -11,6 +12,8 @@ int gol = 1;
 int stilo = 1;
 int bmw = 1;
 int sair = 1;
+
+
 
 void logoLegalRentACar()
     {
@@ -75,8 +78,8 @@ void printCatalogo()
          tm = localtime(&t);
          strftime(data, 20, "%d-%m-%y", tm);
 
-         printf("%s, Hora: %s\n\n", data, __TIME__);
-         printf("%i, Hora: %s\n\n", tm->tm_mday, __TIME__);
+         printf("\t%s, Hora: %s\n\n", data, __TIME__);
+         printf("\t%i, Hora: %s\n\n", tm->tm_mday, __TIME__);
         // printf("%s, Hora: %s\n\n", , __TIME__);
 
          
@@ -585,6 +588,39 @@ int verificaEntradaUmOuDois(int valor)
     return valor;
 }
 
+int verificarDesconto(int valor)
+{
+    int x;
+    printf("\tAPLICAR DESCONTO.\n");
+    printf("\t(1)Idoso.\n");
+    printf("\t(2)Empresa parceira.\n");
+    printf("\t(0)Sem desconto.\n");
+
+    scanf("%i", &x);
+    while (x<1 || x>2)
+        {
+            printf("\tPor gentileza, digite 1, 2 ou 0.\n");
+            scanf("%i", &x);
+            //verificarDesconto(valor);//scanf("%i", &valor);
+        }
+        if (x == 1)
+        {
+            printf("\tIdade:");   
+            scanf("%i", &x);
+            if(x>=60)
+            {
+                printf("\tverificar desconto opção 1: R$%.00f\n", valor*0.9); 
+            }else
+            {
+                printf("\tverificar desconto opção 1: R$%.00f\n", valor*1.0);
+            }
+        }else if (x == 2)
+        {
+            printf("\tverificar desconto opção 2: R$%.00f\n", valor*0.95); 
+        }
+    return valor;
+}
+
 
 /*
 int verificaEntradaUmOuDois(int valor)
@@ -705,10 +741,14 @@ do{
         int menuItem;
 
         //printCatalogo();
+        float test;
+        printf("digite um valor:");
+        scanf("%f", &test);
+        printf(verificarDesconto(test));
         
-         menuItem = printMenuPrincipal();
+        menuItem = printMenuPrincipal();
          
-         escolhaMenuPrincipal(menuItem);
+        escolhaMenuPrincipal(menuItem);
         
         //scanf ("%i",&menuItem);
         /* void escolhaMenuPrincipal(int escolha)
