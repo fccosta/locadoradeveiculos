@@ -13,6 +13,17 @@ int stilo = 1;
 int bmw = 1;
 int sair = 1;
 
+struct data{
+            int dia;
+            int mes;
+            int ano;
+
+         };
+
+struct data dLocPalio, dDevPalio, dLocUno,dDevUno, dLocGol, dDevGol, dLocStilo, dDevStilo, dLocBmw, dDevBmw;
+
+int hLocPalio, hDevPalio, hLocUno, hDevUno, hLocGol, hDevGol, hLocStilo, hDevStilo, hLocBmw, hDevBmw;
+
 
 
 void logoLegalRentACar()
@@ -36,12 +47,12 @@ void printCatalogo()
          if (bmw == 1){printf ("\t BMW  \n");}
          printf ("\n\n");
 
-         printf ("\t CARROS NÃO DISPONÍVEIS / PREVISÃO DE ENTREGA:  \n\n");
-         if (palio == 0){printf ("\t Palio  \n");}
-         if (uno == 0){printf ("\t Uno  \n");}
-         if (gol == 0){printf ("\t Gol  \n");}
-         if (stilo == 0){printf ("\t Stilo  \n");}
-         if (bmw == 0){printf ("\t BMW  \n");}
+         printf ("\t CARROS NÃO DISPONÍVEIS | PREVISÃO DE ENTREGA:  \n\n");
+         if (palio == 0){printf ("\tPalio\t    \t\t\tDATA: %d/%d/%d,  HORA: %d:00\n", dDevPalio.dia,  dDevPalio.mes, &dDevPalio.ano, &hDevPalio);}
+         if (uno == 0){printf ("\t  Uno\t      \t\t\tDATA: i%/i%/i% as %d:00hs\n", dDevUno.dia, dDevUno.mes,  dDevUno.ano, hDevUno);}
+         if (gol == 0){printf ("\t  Gol\t      \t\t\tDATA: i%/i%/i%  as %d:00hs\n",dDevGol.dia,dDevGol.mes,dDevGol.ano, hDevGol);}
+         if (stilo == 0){printf ("\tStilo\t    \t\t\tDATA: i%/i%/i%  as d%:00hs\n",dDevStilo.dia, dDevStilo.mes, dDevStilo.ano, hDevStilo);}
+         if (bmw == 0){printf ("\t  BMW\t      \t\t\tDATA: i%/i%/i%  as %d:00hs\n",dDevBmw.dia,dDevBmw.mes,dDevBmw.ano, hDevBmw);}
          printf ("\n\n");
 
 
@@ -53,13 +64,15 @@ void printCatalogo()
          char data[20];
 
          //codigo provisório
-
+/*
         struct diaMesAno{
             int dia;
             int mes;
             int ano;
 
          };
+         */
+        // struct diaMesAno dataLocacao;
 /*
          struct diaMesAno dataLocacao;
 
@@ -141,10 +154,25 @@ int printMenuLocacao() //imprime as opções de veículos
             }
          return x;
 }
+
+void printTicket(float valor, struct data dataLocacao,struct data dataDevolucao, int hora){
+    
+    printf("\t\n\nFUNÇÃO SENDO IMPLEMENTADA.");
+    
+    /*
+    printf("\tValor Final: R$%.2f\n",valor)
+    printf("\tData/Hora de Locação: i%/i%/i% / às i%:00hs\n",dataLocacao.dia,dataLocacao.mes,dataLocacao.ano,hora);     
+    printf("\tData/Hora de Devolução: i%/i%/i% / às i%:00hs\n",dataDevolucao.dia,dataDevolucao.mes,dataDevolucao.ano,hora);     
+ 
+     
+     */
+    
+}
+
 void locacaoPalio()
 {
 float valorLocacao, x;
-
+ 
                    logoLegalRentACar();
 
                    printf ("\t Modelo Escolhido: PALIO.        \n");
@@ -154,7 +182,16 @@ float valorLocacao, x;
                    printf ("\t Quantos dias voce pretende ficar com o carro ? \n");
                    scanf ("%f",&x);
                    valorLocacao = 100 * x;
-                   printf ("\t Valor da locação : R$%.00f \n",valorLocacao );
+                   //valorLocacao = verificarDesconto(valorLocacao);
+                   printf("\tData de locação:(somente números)\n");
+                   printf("\tDia:");
+                   scanf("%d", &dLocPalio.dia);
+                   printf("\tMês:");
+                   scanf("%d", &dLocPalio.mes);
+                   //printf("\tAno:\n");
+                   dLocPalio.ano = 2017;
+                   
+                   printf ("\t Valor da locação : R$%.2f \n",valorLocacao );
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
                   // printf ("\t (1) SIM \n");
                   // printf ("\t (2) NAO \n");
@@ -166,7 +203,9 @@ float valorLocacao, x;
                    {
                         palio=0;
                         printf ("\t Locação confirmada. Obrigado. \n\n");
-                        //printf ("\t Volte Sempre. \n");
+                        printf ("\t Modelo Escolhido: PALIO.        \n");
+                        
+                //        printTicket(valorLocacao, dLocPalio, dDevPalio, hLocPalio, hDevPalio);
 
                    }
                    else if (x == 2)
@@ -225,7 +264,7 @@ float valorLocacao, x;
                    printf ("\t Quantos dias voce pretende ficar com o carro ? \n");
                    scanf ("%f",&x);
                    valorLocacao = 120 * x;
-                   printf ("\t Valor da locação : R$%.00f \n",valorLocacao );
+                   printf ("\t Valor da locação : R$%.2f \n",valorLocacao );
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
                   
                    scanf ("%f",&x);
@@ -295,7 +334,7 @@ float valorLocacao, x;
                    printf ("\t Quantos dias voce pretende ficar com o carro?\n");
                    scanf ("%f", &x);
                    valorLocacao = 150 * x;
-                   printf ("\t Valor da locação : R$%.00f \n",valorLocacao );
+                   printf ("\t Valor da locação : R$%.2f \n",valorLocacao );
                    printf ("\t Para confirmar digite 1 Cancelar 2: \n");
                    scanf ("%f",&x);
 
@@ -369,7 +408,7 @@ float valorLocacao, x;
                    printf ("\t Quantos dias voce pretende ficar com o carro ? \n");
                    scanf ("%f",&x);
                    valorLocacao = 170 * x;
-                   printf ("\t Valor da locação : R$%.00f \n",valorLocacao );
+                   printf ("\t Valor da locação : R$%.2f \n",valorLocacao );
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
                    scanf ("%f",&x);
 
@@ -437,7 +476,7 @@ float valorLocacao, x;
                    printf ("\t Quantos dias voce pretende ficar com o carro ? \n\n");
                    scanf ("%f",&x);
                    valorLocacao = 400 * x;
-                   printf ("\t Valor da locação : R$%.00f \n",valorLocacao );
+                   printf ("\t Valor da locação : R$%.2f \n",valorLocacao );
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
                    scanf ("%f",&x);
 
@@ -588,8 +627,8 @@ int verificaEntradaUmOuDois(int valor)
     return valor;
 }
 
-int verificarDesconto(int valor)
-{
+float verificarDesconto(float valor)
+{    
     int x;
     printf("\tAPLICAR DESCONTO.\n");
     printf("\t(1)Idoso.\n");
@@ -597,7 +636,7 @@ int verificarDesconto(int valor)
     printf("\t(0)Sem desconto.\n");
 
     scanf("%i", &x);
-    while (x<1 || x>2)
+    while (x<0 || x>2)
         {
             printf("\tPor gentileza, digite 1, 2 ou 0.\n");
             scanf("%i", &x);
@@ -605,20 +644,18 @@ int verificarDesconto(int valor)
         }
         if (x == 1)
         {
-            printf("\tIdade:");   
-            scanf("%i", &x);
-            if(x>=60)
-            {
-                printf("\tverificar desconto opção 1: R$%.00f\n", valor*0.9); 
-            }else
-            {
-                printf("\tverificar desconto opção 1: R$%.00f\n", valor*1.0);
-            }
+            printf("\tValor com 10%% de Desconto: R$%.2f\n", valor*0.9);
+            return valor*0.9;
+
         }else if (x == 2)
         {
-            printf("\tverificar desconto opção 2: R$%.00f\n", valor*0.95); 
+            printf("\tValor com 5%% de Desconto: R$%.2f\n", valor*0.95);
+            return valor*0.95;
+        }else if (x == 0)
+        {
+            return valor*1.0;
         }
-    return valor;
+    //return valor;
 }
 
 
@@ -739,13 +776,16 @@ void main ()
 {
 do{
         int menuItem;
-
-        //printCatalogo();
+        
+        //printCatalogo(); teste printCatalogo();
+/* código para teste da funçao verificaDesconto();   
+ * COM ESSE COMENTÁRIO A FUNÇÃO ESTÁ SENDO 
+ * TESTADA EM locacaoPalio();     
         float test;
         printf("digite um valor:");
         scanf("%f", &test);
         printf(verificarDesconto(test));
-        
+ */   
         menuItem = printMenuPrincipal();
          
         escolhaMenuPrincipal(menuItem);
