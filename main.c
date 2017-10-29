@@ -199,8 +199,6 @@ float valorLocacao, x;
                         printf ("\t Locação Cancelada!\n\n");
                    }
 
-                   system ("pause");
-
 }
 
 void devolucaoAstonMartinMARB00()
@@ -230,8 +228,6 @@ float valorLocacao, x;
                    {
                         printf ("\t Devolução Cancelada!\n\n");
                    }
-
-                 system ("pause");
 
  }
 
@@ -266,8 +262,7 @@ float valorLocacao, x;
                    {
                         printf ("\t Locação Cancelada!\n\n");
                    }
- 
-                   system ("pause");
+
 }
 
 void devolucaoLaFerrariAperta()
@@ -299,7 +294,6 @@ float valorLocacao, x;
 
                    }
 
-                   system ("pause");
  }
 
 
@@ -336,8 +330,6 @@ float valorLocacao, x;
                         
                    }
 
-                   system ("pause");
-
  }
 
 void devolucaoBugattiChiron()
@@ -365,9 +357,6 @@ float valorLocacao, x;
                     
                    }
  
-                   system ("pause");
-
-
  }
 
 
@@ -403,7 +392,6 @@ float valorLocacao, x;
                         printf ("\t Locação Cancelada!\n\n");
                    }
 
-                   system ("pause");
  }
 
 
@@ -431,7 +419,6 @@ float valorLocacao, x;
                         printf ("\t Devolução Cancelada!\n\n");
                    }
 
-                   system ("pause");
  }
 
 
@@ -467,7 +454,6 @@ float valorLocacao, x;
                         printf ("\t Locação Cancelada!\n\n");
                    }
 
-                   system ("pause");
 }
 
 void devolucaoArashAF10Hybrid()
@@ -494,15 +480,10 @@ float valorLocacao, x;
                         printf ("\t Devolução Cancelada!\n\n");
                    }
 
-                   system ("pause");
 }
 
 void alugarVeiculo(int menuItem)
 {
-
-//    scanf ("%i",&menuItem); //ler a escolha do usuario baseado no menu principal (função printMenu)
-
-//        clrscr(); //limpa a tela
 
     switch(menuItem)
     {
@@ -526,11 +507,6 @@ void alugarVeiculo(int menuItem)
 
 void devolverVeiculo(int menuItem)
 {
-    //int menuItem;
-
-    //scanf ("%i",&menuItem); //ler a escolha do usuario baseado no menu principal (função printMenu)
-
-//        clrscr(); //limpa a tela
 
     switch(menuItem)
     {
@@ -618,6 +594,7 @@ float verificarDesconto(float valor)
     printf("\t(0)Sem desconto.\n");
 
     scanf("%i", &x);
+    
     while (x<0 || x>2)
         {
             printf("\tPor gentileza, digite 1, 2 ou 0.\n");
@@ -640,118 +617,7 @@ float verificarDesconto(float valor)
     //return valor;
 }
 
-
-/*
-int verificaEntradaUmOuDois(int valor)
-{
-    int a=0;
-
-    do
-    {
-        if (valor == 1)
-            {
-                ++a;
-            }
-        if(valor == 2)
-            {
-                ++a;
-            }
-
-        if(a==0)
-            {
-                printf("Por gentileza, digite 1 ou 2.\n");
-                scanf("%i", &valor);
-            }
-    }while(a==0);
-}
- */
-
- //++++++++++++++++++++++++++++++++++++
-/*
-  //
-  // pega o número de segundos desde 1970
-  //
-  t = time(NULL);
-
-  //
-  // mostra na tela, formatado
-  //
-  print_time(t);
-
-  //
-  // pega o fuso horário da máquina para pegar o horário local
-  // ao invés de GMT.
-  //
-  long timezone;
-
-  _tzset(); // carrega as configurações de fuso
-
-  _get_timezone(&timezone); // lê a diferença do fuso
-
-  cout << timezone << endl;
-
-  //
-  // ajusta o horário pelo fuso
-  //
-  t -= timezone;
-
-  print_time(t);
-
-  //
-  // avança da data em 2 dias
-  //
-  t += 48 * 60 * 60;
-
-  //
-  // mostra novamente
-  //
-  print_time(t);
-
-
-
-//#include <stdio.h>
-//#include <tchar.h>
-#include <time.h>
-
-//using namespace std;
-
-void print_time(time_t t)
-{
-  tm* formatted_time;
-
-  //
-  // essa função "quebra" essa quantidade de segundos e dia, mês, ano, etc
-  //
-  formatted_time = gmtime(&t);
-
-  //
-  // isso vai mostrar algo como "2009/12/07 14:42:57"
-  // note que é necessário somar 1900 na data para pegar o ano corrente
-  //
-    printf << setfill('0') <<
-    setw(4) << formatted_time->tm_year+1900 << "/" <<
-    setw(2) << formatted_time->tm_mon+1 << "/" <<
-    setw(2) << formatted_time->tm_mday << " " <<
-    setw(2) << formatted_time->tm_hour << ":" <<
-    setw(2) << formatted_time->tm_min << ":" <<
-    setw(2) << formatted_time->tm_sec << endl;
-}
-
-
-int main()
-{
-
-
-  return 0;
-}
-
-
-
-
-
-
-*/
- //+++++++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++
 
 
 void main ()
