@@ -8,6 +8,7 @@ int BugattiChiron = 1;
 int KoenigseggRegera = 1;
 int ArashAF10Hybrid = 1;
 int sair = 1;
+const int HORA_LOCACAO = 12; 
 
 time_t timer;//usada da funão resolverDatas
 struct tm dLocAstonMartinMARB00, dDevAstonMartinMARB00, dLocLaFerrariAperta,dDevLaFerrariAperta, dLocBugattiChiron, dDevBugattiChiron, dLocKoenigseggRegera, dDevKoenigseggRegera, dLocArashAF10Hybrid, dDevArashAF10Hybrid;
@@ -97,11 +98,11 @@ void printCatalogo()
          printf ("\n\n");
          
          printf ("\t CARROS NÃO DISPONÍVEIS | DATA DE LOC | PREVISÃO DE ENTREGA:  \n\n");
-         if (AstonMartinMARB00 == 0){printf ("\t Aston Martin MA-RB00  \t  %d/%d/%d\t  %d/%d/%d\n",dLocAstonMartinMARB00.tm_mday,dLocAstonMartinMARB00.tm_mon+1,dLocAstonMartinMARB00.tm_year+1900, dDevAstonMartinMARB00.tm_mday,dDevAstonMartinMARB00.tm_mon+1,dDevAstonMartinMARB00.tm_year+1900);}
-         if (LaFerrariAperta == 0){printf ("\t La Ferrari Aperta    \t %d/%d/%d\n",dDevAstonMartinMARB00.tm_mday-1,dDevAstonMartinMARB00.tm_mon+1,dDevAstonMartinMARB00.tm_year+1900);}
-         if (BugattiChiron == 0){printf ("\t Bugatti Chiron   \t\t %d/%d/%d\n",dDevAstonMartinMARB00.tm_mday-1,dDevAstonMartinMARB00.tm_mon+1,dDevAstonMartinMARB00.tm_year+1900);}
-         if (KoenigseggRegera == 0){printf ("\t Koenigsegg Regera  \t\t %d/%d/%d\n",dDevAstonMartinMARB00.tm_mday-1,dDevAstonMartinMARB00.tm_mon+1,dDevAstonMartinMARB00.tm_year+1900);}
-         if (ArashAF10Hybrid == 0){printf ("\t Arash AF10 Hybrid    \t %d/%d/%d\n",dDevAstonMartinMARB00.tm_mday-1,dDevAstonMartinMARB00.tm_mon+1,dDevAstonMartinMARB00.tm_year+1900);}
+         if (AstonMartinMARB00 == 0){printf ("\t Aston Martin MA-RB00  \t  %d/%d/%d\t%d/%d/%d às %d:00h\n",dLocAstonMartinMARB00.tm_mday,dLocAstonMartinMARB00.tm_mon+1,dLocAstonMartinMARB00.tm_year+1900, dDevAstonMartinMARB00.tm_mday,dDevAstonMartinMARB00.tm_mon+1,dDevAstonMartinMARB00.tm_year+1900, HORA_LOCACAO);}
+         if (LaFerrariAperta == 0){printf ("\t La Ferrari Aperta    \t  %d/%d/%d\t%d/%d/%d às %d:00h\n",dLocLaFerrariAperta.tm_mday,dLocLaFerrariAperta.tm_mon+1,dLocLaFerrariAperta.tm_year+1900, dDevLaFerrariAperta.tm_mday,dDevLaFerrariAperta.tm_mon+1,dDevLaFerrariAperta.tm_year+1900, HORA_LOCACAO);}
+         if (BugattiChiron == 0){printf ("\t Bugatti Chiron   \t  %d/%d/%d\t%d/%d/%d às %d:00h\n",dLocBugattiChiron.tm_mday,dLocBugattiChiron.tm_mon+1,dLocBugattiChiron.tm_year+1900, dDevBugattiChiron.tm_mday,dDevBugattiChiron.tm_mon+1,dDevBugattiChiron.tm_year+1900, HORA_LOCACAO);}
+         if (KoenigseggRegera == 0){printf ("\t Koenigsegg Regera  \t  %d/%d/%d\t%d/%d/%d às %d:00h\n",dLocKoenigseggRegera.tm_mday,dLocKoenigseggRegera.tm_mon+1,dLocKoenigseggRegera.tm_year+1900, dDevKoenigseggRegera.tm_mday,dDevKoenigseggRegera.tm_mon+1,dDevKoenigseggRegera.tm_year+1900, HORA_LOCACAO);}
+         if (ArashAF10Hybrid == 0){printf ("\t Arash AF10 Hybrid    \t  %d/%d/%d\t%d/%d/%d às %d:00h\n",dLocArashAF10Hybrid.tm_mday,dLocArashAF10Hybrid.tm_mon+1,dLocArashAF10Hybrid.tm_year+1900, dDevAstonMartinMARB00.tm_mday,dDevArashAF10Hybrid.tm_mon+1,dDevArashAF10Hybrid.tm_year+1900, HORA_LOCACAO);}
          printf ("\n\n");
 
 }
@@ -181,8 +182,8 @@ float valorLocacao, x;
                   // printf ("\t (1) SIM \n");
                   // printf ("\t (2) NAO \n");
                    scanf ("%f",&x);
-
-                   x = verificaEntradaUmOuDois(x);
+                   
+                   x = verificaEntradaUmOuDois((int)x);
 
                    if(x == 1)
                    {
@@ -218,7 +219,7 @@ float valorLocacao, x;
 
                    scanf ("%f",&x);
 
-                   x = verificaEntradaUmOuDois(x);
+                   x = verificaEntradaUmOuDois((int)x);
 
                    if(x == 1)
                    {
@@ -245,12 +246,15 @@ float valorLocacao, x;
                    printf ("\t Digite a quantidade de dias de locação:\n");
                    scanf ("%f",&x);
                    valorLocacao = 21600 * x;
+                   
+                   resolverDatas(&dLocLaFerrariAperta, &dDevLaFerrariAperta, x);
+                   
                    printf ("\t Valor da locação : R$%.2f \n",valorLocacao );
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
                   
                    scanf ("%f",&x);
 
-                   x = verificaEntradaUmOuDois(x);
+                   x = verificaEntradaUmOuDois((int)x);
 
                    if(x == 1)
                    {
@@ -281,7 +285,7 @@ float valorLocacao, x;
 
                    scanf ("%f",&x);
 
-                   x = verificaEntradaUmOuDois(x);
+                   x = verificaEntradaUmOuDois((int)x);
 
                    if(x == 1)
                    {
@@ -310,11 +314,14 @@ float valorLocacao, x;
                    printf ("\t Digite a quantidade de dias de locação:\n");
                    scanf ("%f", &x);
                    valorLocacao = 24000 * x;
+                   
+                   resolverDatas(&dLocBugattiChiron, &dDevBugattiChiron, x);
+                   
                    printf ("\t Valor da locação : R$%.2f \n",valorLocacao );
                    printf ("\t Para confirmar digite 1 Cancelar 2: \n");
                    scanf ("%f",&x);
-
-                   x = verificaEntradaUmOuDois(x);
+                   
+                   x = verificaEntradaUmOuDois((int)x);
 
                    if(x == 1)
                    {
@@ -344,7 +351,7 @@ float valorLocacao, x;
                    printf ("\t Para confirmar digite 1 Cancelar 2: \n");
                    scanf ("%f",&x);
 
-                   x = verificaEntradaUmOuDois(x);
+                   x = verificaEntradaUmOuDois((int)x);
 
                    if(x == 1)
                    {
@@ -375,12 +382,15 @@ float valorLocacao, x;
                    printf ("\t Valor da diaria: R$ 21.600,00               \n");// 900,00 hr
                    printf ("\t Digite a quantidade de dias de locação:     \n");
                    scanf ("%f",&x);
+                   
+                   resolverDatas(&dLocKoenigseggRegera, &dDevKoenigseggRegera, x);
+                   
                    valorLocacao = 21600 * x;
                    printf ("\t Valor da locação : R$%.2f \n",valorLocacao );
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
                    scanf ("%f",&x);
-
-                   x = verificaEntradaUmOuDois(x);
+                   
+                   x = verificaEntradaUmOuDois((int)x);
 
                    if(x == 1)
                    {
@@ -408,7 +418,7 @@ float valorLocacao, x;
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
                    scanf ("%f",&x);
 
-                   x = verificaEntradaUmOuDois(x);
+                   x = verificaEntradaUmOuDois((int)x);
 
                    if(x == 1)
                    {
@@ -436,12 +446,15 @@ float valorLocacao, x;
                    printf ("\t Valor da diaria: R$ 21.600,00              \n");// 900,00 hr
                    printf ("\t Digite a quantidade de dias de locação:\n");
                    scanf ("%f",&x);
-                   valorLocacao = 400 * x;
+                   
+                   resolverDatas(&dLocArashAF10Hybrid, &dDevArashAF10Hybrid, x);
+                   
+                   valorLocacao = 21600 * x;
                    printf ("\t Valor da locação : R$%.2f \n",valorLocacao );
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
                    scanf ("%f",&x);
-
-                   x = verificaEntradaUmOuDois(x);
+                   
+                   x = verificaEntradaUmOuDois((int)x);
 
                    if(x == 1)
                    {
@@ -468,7 +481,7 @@ float valorLocacao, x;
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
                    scanf ("%f",&x);
 
-                   x = verificaEntradaUmOuDois(x);
+                   x = verificaEntradaUmOuDois((int)x);
 
                    if(x == 1)
                    {
@@ -563,23 +576,37 @@ void escolhaMenuPrincipal(int escolha)
 
 int verificaEntradaUmOuDois(int valor)
 {
-    if (valor<1 || valor>2)
+    if (valor<1)
         {
             printf("\tPor gentileza, digite 1 ou 2.\n");
             scanf("%i", &valor);
             verificaEntradaUmOuDois(valor);//scanf("%i", &valor);
 
-        }else if (valor == 1)
+        }else if(valor>2)
         {
+            printf("\tPor gentileza, digite 1 ou 2.\n");
+            scanf("%i", &valor);
+            verificaEntradaUmOuDois(valor);//scanf("%i", &valor);
                        
-        }else if (valor == 2)
+        }else
+            
+    return valor;
+}
+
+int verificarSair(int x ){
+    
+    if (x == 1)
+        {
+            return x;
+        }else
         {
             system ("cls");
             printf ("\t=============================================================\n");
             printf ("\t=====================PROGRAMA FINALIZADO=====================\n");
             printf ("\t=============================================================\n\n");
-        }
-    return valor;
+            return 0;
+    }
+       
 }
 
 float verificarDesconto(float valor)
@@ -770,10 +797,10 @@ do{
         //printMenuLocacao();
         
         
-        printf("\tPara voltar ao menu principal digite 1 - Sair do programa, digite 2.\n");
+        printf("\tMenu principal-DIGITE 1 - Sair do programa - DIGITE OUTRO NÚMERO.\n");
         scanf("%i", &sair);
 
-        sair = verificaEntradaUmOuDois(sair);
+        sair = verificarSair(sair);
 
         /*
         void verificaEntradaUmOuDois(int valor)
