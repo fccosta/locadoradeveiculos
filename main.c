@@ -1,16 +1,16 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <time.h>
-#include <iso646.h>
+//#include <iso646.h>
 //# include <conio.h>   // necessário para as funções clrscr e getch
-//int palio, uno, gol, stilo, bmw;
+//int AstonMartinMARB00, LaFerrariAperta, BugattiChiron, KoenigseggRegera, bmw;
 time_t t;
 
-int palio = 1;
-int uno = 1;
-int gol = 1;
-int stilo = 1;
-int bmw = 1;
+int AstonMartinMARB00 = 1;
+int LaFerrariAperta = 1;
+int BugattiChiron = 1;
+int KoenigseggRegera = 1;
+int ArashAF10Hybrid = 1;
 int sair = 1;
 
 struct data{
@@ -20,9 +20,9 @@ struct data{
 
          };
 
-struct data dLocPalio, dDevPalio, dLocUno,dDevUno, dLocGol, dDevGol, dLocStilo, dDevStilo, dLocBmw, dDevBmw;
+struct data dLocAstonMartinMARB00, dDevAstonMartinMARB00, dLocLaFerrariAperta,dDevLaFerrariAperta, dLocBugattiChiron, dDevBugattiChiron, dLocKoenigseggRegera, dDevKoenigseggRegera, dLocArashAF10Hybrid, dDevArashAF10Hybrid;
 
-int hLocPalio, hDevPalio, hLocUno, hDevUno, hLocGol, hDevGol, hLocStilo, hDevStilo, hLocBmw, hDevBmw;
+int hLocAstonMartinMARB00, hDevAstonMartinMARB00, hLocLaFerrariAperta, hDevLaFerrariAperta, hLocBugattiChiron, hDevBugattiChiron, hLocKoenigseggRegera, hDevKoenigseggRegera, hLocArashAF10Hybrid, hDevArashAF10Hybrid;
 
 
 
@@ -40,19 +40,19 @@ void printCatalogo()
          logoLegalRentACar();
 
          printf ("\t CARROS DISPONÍVEIS PARA LOCAÇÃO:  \n\n");
-         if (palio == 1){printf ("\t Palio  \n");}
-         if (uno == 1){printf ("\t Uno  \n");}
-         if (gol == 1){printf ("\t Gol  \n");}
-         if (stilo == 1){printf ("\t Stilo  \n");}
-         if (bmw == 1){printf ("\t BMW  \n");}
+         if (AstonMartinMARB00 == 1){printf ("\t Aston Martin MA-RB00  \n");}
+         if (LaFerrariAperta == 1){printf ("\t La Ferrari Aperta  \n");}
+         if (BugattiChiron == 1){printf ("\t Bugatti Chiron  \n");}
+         if (KoenigseggRegera == 1){printf ("\t Koenigsegg Regera  \n");}
+         if (ArashAF10Hybrid == 1){printf ("\t Arash AF10 Hybrid  \n");}
          printf ("\n\n");
 
          printf ("\t CARROS NÃO DISPONÍVEIS | PREVISÃO DE ENTREGA:  \n\n");
-         if (palio == 0){printf ("\tPalio\t    \t\t\tDATA: %d/%d/%d,  HORA: %d:00\n", dDevPalio.dia,  dDevPalio.mes, &dDevPalio.ano, &hDevPalio);}
-         if (uno == 0){printf ("\t  Uno\t      \t\t\tDATA: i%/i%/i% as %d:00hs\n", dDevUno.dia, dDevUno.mes,  dDevUno.ano, hDevUno);}
-         if (gol == 0){printf ("\t  Gol\t      \t\t\tDATA: i%/i%/i%  as %d:00hs\n",dDevGol.dia,dDevGol.mes,dDevGol.ano, hDevGol);}
-         if (stilo == 0){printf ("\tStilo\t    \t\t\tDATA: i%/i%/i%  as d%:00hs\n",dDevStilo.dia, dDevStilo.mes, dDevStilo.ano, hDevStilo);}
-         if (bmw == 0){printf ("\t  BMW\t      \t\t\tDATA: i%/i%/i%  as %d:00hs\n",dDevBmw.dia,dDevBmw.mes,dDevBmw.ano, hDevBmw);}
+         if (AstonMartinMARB00 == 0){printf ("\t Aston Martin MA-RB00\t    \t\t\tDATA: %d/%d/%d,  HORA: %d:00\n", &dDevAstonMartinMARB00.dia,  &dDevAstonMartinMARB00.mes, &dDevAstonMartinMARB00.ano, &hDevAstonMartinMARB00);}
+         if (LaFerrariAperta == 0){printf ("\t La Ferrari Aperta\t      \t\t\tDATA: i%/i%/i% as %d:00hs\n", dDevLaFerrariAperta.dia, dDevLaFerrariAperta.mes,  dDevLaFerrariAperta.ano, hDevLaFerrariAperta);}
+         if (BugattiChiron == 0){printf ("\t Bugatti Chiron\t      \t\t\tDATA: i%/i%/i%  as %d:00hs\n",dDevBugattiChiron.dia,dDevBugattiChiron.mes,dDevBugattiChiron.ano, hDevBugattiChiron);}
+         if (KoenigseggRegera == 0){printf ("\t Koenigsegg Regera\t    \t\t\tDATA: i%/i%/i%  as d%:00hs\n",dDevKoenigseggRegera.dia, dDevKoenigseggRegera.mes, dDevKoenigseggRegera.ano, hDevKoenigseggRegera);}
+         if (ArashAF10Hybrid == 0){printf ("\t Arash AF10 Hybrid\t      \t\t\tDATA: i%/i%/i%  as %d:00hs\n",dDevArashAF10Hybrid.dia,dDevArashAF10Hybrid.mes,dDevArashAF10Hybrid.ano, hDevArashAF10Hybrid);}
          printf ("\n\n");
 
 
@@ -99,17 +99,17 @@ void printCatalogo()
         
 
 
-/*         printf ("\t Uno    \n");
-         printf ("\t Gol    \n");
-         printf ("\t Stilo  \n");
-         printf ("\t BMW    \n");
+/*         printf ("\t LaFerrariAperta    \n");
+         printf ("\t BugattiChiron    \n");
+         printf ("\t KoenigseggRegera  \n");
+         printf ("\t ArashAF10Hybrid    \n");
 
          printf ("\t CARROS ALUGADOS:  \n\n");
-         printf ("\t (1) Palio  \n");
-         printf ("\t (2) Uno    \n");
-         printf ("\t (3) Gol    \n");
-         printf ("\t (4) Stilo  \n");
-         printf ("\t (5) BMW    \n");
+         printf ("\t (1) Aston Martin MA-RB00  \n");
+         printf ("\t (2) LaFerrariAperta    \n");
+         printf ("\t (3) BugattiChiron    \n");
+         printf ("\t (4) KoenigseggRegera  \n");
+         printf ("\t (5) ArashAF10Hybrid    \n");
 */
 
 }
@@ -137,11 +137,11 @@ int printMenuLocacao() //imprime as opções de veículos
          logoLegalRentACar();
          
          printf ("\t Selecione o veículo:  \n\n");
-         printf ("\t (1) Palio  \n");
-         printf ("\t (2) Uno    \n");
-         printf ("\t (3) Gol    \n");
-         printf ("\t (4) Stilo  \n");
-         printf ("\t (5) BMW    \n");
+         printf ("\t (1) Aston Martin MA-RB00  \n");
+         printf ("\t (2) La Ferrari Aperta    \n");
+         printf ("\t (3) Bugatti Chiron    \n");
+         printf ("\t (4) Koenigsegg Regera  \n");
+         printf ("\t (5) Arash AF10 Hybrid    \n");
          printf ("\t (0) Sair    \n");
          
          int x;
@@ -169,27 +169,25 @@ void printTicket(float valor, struct data dataLocacao,struct data dataDevolucao,
     
 }
 
-void locacaoPalio()
+void locacaoAstonMartinMARB00()
 {
 float valorLocacao, x;
  
                    logoLegalRentACar();
 
-                   printf ("\t Modelo Escolhido: PALIO.        \n");
-                   printf ("\t Placa: GTS 6598 \n");
-                   printf ("\t Cor Verde  Ano 98/99 \n");
-                   printf ("\t Valor da diaria: R$ 100,00                    \n");
-                   printf ("\t Quantos dias voce pretende ficar com o carro ? \n");
+                   printf ("\t Modelo Escolhido: Aston Martin MA-RB00.        \n");
+                   printf ("\t Valor da diaria: R$ 28.800,00                  \n");//1.200,00 hr
+                   printf ("\t Digite a quantidade de dias de locação:\n");
                    scanf ("%f",&x);
-                   valorLocacao = 100 * x;
+                   valorLocacao = 28800 * x;
                    //valorLocacao = verificarDesconto(valorLocacao);
                    printf("\tData de locação:(somente números)\n");
                    printf("\tDia:");
-                   scanf("%d", &dLocPalio.dia);
+                   scanf("%d", &dLocAstonMartinMARB00.dia);
                    printf("\tMês:");
-                   scanf("%d", &dLocPalio.mes);
+                   scanf("%d", &dLocAstonMartinMARB00.mes);
                    //printf("\tAno:\n");
-                   dLocPalio.ano = 2017;
+                   dLocAstonMartinMARB00.ano = 2017;
                    
                    printf ("\t Valor da locação : R$%.2f \n",valorLocacao );
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
@@ -201,11 +199,11 @@ float valorLocacao, x;
 
                    if(x == 1)
                    {
-                        palio=0;
+                        AstonMartinMARB00=0;
                         printf ("\t Locação confirmada. Obrigado. \n\n");
-                        printf ("\t Modelo Escolhido: PALIO.        \n");
+                        printf ("\t Modelo Escolhido: Aston Martin MA-RB00.        \n");
                         
-                //        printTicket(valorLocacao, dLocPalio, dDevPalio, hLocPalio, hDevPalio);
+                //        printTicket(valorLocacao, dLocAston Martin MA-RB00, dDevAston Martin MA-RB00, hLocAston Martin MA-RB00, hDevAston Martin MA-RB00);
 
                    }
                    else if (x == 2)
@@ -217,16 +215,14 @@ float valorLocacao, x;
 
 }
 
-void devolucaoPalio()
+void devolucaoAstonMartinMARB00()
 {
 float valorLocacao, x;
                    
                    logoLegalRentACar();
                    
-                   printf ("\t Modelo Devolvido: PALIO.        \n");
-                   printf ("\t Placa: GTS 6598 \n");
-                   printf ("\t Cor Verde  Ano 98/99 \n");
- //                  printf ("\t Valor da diaria: R$ 100,00                    \n");
+                   printf ("\t Modelo Devolvido: Aston Martin MA-RB00.        \n");
+                // printf ("\t Valor da diaria: R$ 100,00                    \n");
  //                  printf ("\t Quantos dias voce pretende ficar com o carro ? \n");
  //                  scanf ("%f",&x);
  //                  valorLocacao = 100 * x;
@@ -239,7 +235,7 @@ float valorLocacao, x;
 
                    if(x == 1)
                    {
-                        palio=1;
+                        AstonMartinMARB00=1;
                         printf ("\t Devolução Confirmada. Obrigado. \n\n");
                    }
                    else if (x == 2)
@@ -251,19 +247,17 @@ float valorLocacao, x;
 
  }
 
-void locacaoUno()
+void locacaoLaFerrariAperta()
 {
 float valorLocacao, x;
                    
                    logoLegalRentACar();
                    
-                   printf ("\t Modelo Escolhido: UNO.          \n");
-                   printf ("\t Placa: GYH 2635 \n");
-                   printf ("\t Cor Prata  Ano 03/04 \n");
-                   printf ("\t Valor da diaria: R$ 120,00                    \n");
-                   printf ("\t Quantos dias voce pretende ficar com o carro ? \n");
+                   printf ("\t Modelo Escolhido: La Ferrari Aperta.   \n");
+                   printf ("\t Valor da diaria: R$ 21.600,00          \n");//900,00 hr
+                   printf ("\t Digite a quantidade de dias de locação:\n");
                    scanf ("%f",&x);
-                   valorLocacao = 120 * x;
+                   valorLocacao = 21600 * x;
                    printf ("\t Valor da locação : R$%.2f \n",valorLocacao );
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
                   
@@ -273,7 +267,7 @@ float valorLocacao, x;
 
                    if(x == 1)
                    {
-                        uno=0;
+                        LaFerrariAperta=0;
                         printf ("\t Locação confirmada. Obrigado. \n\n");
                       
                    }
@@ -285,16 +279,13 @@ float valorLocacao, x;
                    system ("pause");
 }
 
-void devolucaoUno()
+void devolucaoLaFerrariAperta()
 {
 float valorLocacao, x;
                    
                    logoLegalRentACar();
                    
-                   printf ("\t Modelo Devolvido: UNO.          \n");
-                   printf ("\t Placa: GYH 2635 \n");
-                   printf ("\t Cor Prata  Ano 03/04 \n");
-                   printf ("\t Valor da diaria: R$ 120,00                    \n");
+                   printf ("\t Modelo Devolvido: La Ferrari Aperta.          \n");
 //                   printf ("\t Quantos dias voce pretende ficar com o carro ? \n");
 //                   scanf ("%f",&x);
 //                   valorLocacao = 120 * x;
@@ -307,7 +298,7 @@ float valorLocacao, x;
 
                    if(x == 1)
                    {
-                        uno=1;
+                        LaFerrariAperta=1;
                         printf ("\t Devolução confirmada. Obrigado. \n\n");
  
                    }
@@ -321,19 +312,17 @@ float valorLocacao, x;
  }
 
 
-void locacaoGol()
+void locacaoBugattiChiron()
 {
 float valorLocacao, x;
                    
                    logoLegalRentACar();
                    
-                   printf ("\t Modelo Escolhido: GOL.\n");
-                   printf ("\t Placa: POH 1645 \n");
-                   printf ("\t Cor Prata  Ano 2007 \n");
-                   printf ("\t Valor da diaria: R$ 150,00 \n");
-                   printf ("\t Quantos dias voce pretende ficar com o carro?\n");
+                   printf ("\t Modelo Escolhido: Bugatti Chiron.\n");
+                   printf ("\t Valor da diaria: R$ 24.000,00    \n"); //1.000,00 hr
+                   printf ("\t Digite a quantidade de dias de locação:\n");
                    scanf ("%f", &x);
-                   valorLocacao = 150 * x;
+                   valorLocacao = 24000 * x;
                    printf ("\t Valor da locação : R$%.2f \n",valorLocacao );
                    printf ("\t Para confirmar digite 1 Cancelar 2: \n");
                    scanf ("%f",&x);
@@ -342,7 +331,7 @@ float valorLocacao, x;
 
                    if(x == 1)
                    {
-                        gol=0;
+                        BugattiChiron=0;
                         printf ("\t Locação confirmada. Obrigado. \n");
                         //printf ("\t Volte Sempre. \n");
 
@@ -357,20 +346,14 @@ float valorLocacao, x;
 
  }
 
-void devolucaoGol()
+void devolucaoBugattiChiron()
 {
 float valorLocacao, x;
                    
                    logoLegalRentACar();
                    
-                   printf ("\t Modelo Devolvido: GOL.\n");
-                   printf ("\t Placa: POH 1645 \n");
-                   printf ("\t Cor Prata  Ano 2007 \n");
-                   printf ("\t Valor da diaria: R$ 150,00\n");
-//                   printf ("\t Quantos dias voce pretende ficar com o carro ? \n");
-//                   scanf ("%f", &x);
-//                   valorLocacao = 150 * x;
-//                   printf ("\t Valor da locação : R$%.00f \n",valorLocacao );
+                   printf ("\t Modelo Devolvido: Bugatti Chiron.\n");
+
                    printf ("\t Para confirmar digite 1 Cancelar 2: \n");
                    scanf ("%f",&x);
 
@@ -378,7 +361,7 @@ float valorLocacao, x;
 
                    if(x == 1)
                    {
-                        gol=0;
+                        BugattiChiron=0;
                         printf ("\t Locação confirmada. Obrigado. \n");
              
                    }
@@ -395,19 +378,17 @@ float valorLocacao, x;
 
 
 
-void locacaoStilo()
+void locacaoKoenigseggRegera()
 {
 float valorLocacao, x;
                    
                    logoLegalRentACar();
                    
-                   printf ("\t Modelo Escolhido: STILO.        \n");
-                   printf ("\t Placa: MZI 4512 \n");
-                   printf ("\t Cor Vermelho  Ano 2010 \n");
-                   printf ("\t Valor da diaria: R$ 170,00                    \n");
-                   printf ("\t Quantos dias voce pretende ficar com o carro ? \n");
+                   printf ("\t Modelo Escolhido: Koenigsegg Regera.        \n");
+                   printf ("\t Valor da diaria: R$ 21.600,00               \n");// 900,00 hr
+                   printf ("\t Digite a quantidade de dias de locação:     \n");
                    scanf ("%f",&x);
-                   valorLocacao = 170 * x;
+                   valorLocacao = 21600 * x;
                    printf ("\t Valor da locação : R$%.2f \n",valorLocacao );
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
                    scanf ("%f",&x);
@@ -416,7 +397,7 @@ float valorLocacao, x;
 
                    if(x == 1)
                    {
-                        stilo=0;
+                        KoenigseggRegera=0;
                         printf ("\t Locação confirmada. Obrigado. \n\n");
 
                    }
@@ -429,20 +410,14 @@ float valorLocacao, x;
  }
 
 
-void devolucaoStilo()
+void devolucaoKoenigseggRegera()
 {
 float valorLocacao, x;
                    
                    logoLegalRentACar();
                    
-                   printf ("\t Modelo Devolvido: STILO.        \n");
-                   printf ("\t Placa: MZI 4512 \n");
-                   printf ("\t Cor Vermelho  Ano 2010 \n");
-                   printf ("\t Valor da diaria: R$ 170,00                    \n");
-//                   printf ("\t Quantos dias voce pretende ficar com o carro ? \n");
-//                   scanf ("%f",&x);
-//                   valorLocacao = 170 * x;
-//                   printf ("\t Valor da locação : R$%.00f \n",valorLocacao );
+                   printf ("\t Modelo Devolvido: Koenigsegg Regera.        \n");
+                  
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
                    scanf ("%f",&x);
 
@@ -450,7 +425,7 @@ float valorLocacao, x;
 
                    if(x == 1)
                    {
-                        stilo=1;
+                        KoenigseggRegera=1;
                         printf ("\t Devolução confirmada. Obrigado. \n\n");
 
                    }
@@ -463,17 +438,16 @@ float valorLocacao, x;
  }
 
 
-void locacaoBmw()
+void locacaoArashAF10Hybrid()
 {
 float valorLocacao, x;
                    
                    logoLegalRentACar();
                    
-                   printf ("\t O modelo que voce escolheu e uma BMW.         \n");
-                   printf ("\t Placa: OTT 6687 \n");
-                   printf ("\t Cor Prata  Ano 2009 \n");
-                   printf ("\t Valor da diaria: R$ 400,00                    \n\n");
-                   printf ("\t Quantos dias voce pretende ficar com o carro ? \n\n");
+                   printf ("\t Modelo Escolhido: ArashAF10Hybrid.         \n");
+                   
+                   printf ("\t Valor da diaria: R$ 21.600,00              \n");// 900,00 hr
+                   printf ("\t Digite a quantidade de dias de locação:\n");
                    scanf ("%f",&x);
                    valorLocacao = 400 * x;
                    printf ("\t Valor da locação : R$%.2f \n",valorLocacao );
@@ -484,7 +458,7 @@ float valorLocacao, x;
 
                    if(x == 1)
                    {
-                        bmw=0;
+                        ArashAF10Hybrid=0;
                         printf ("\t Locação confirmada. Obrigado.\n\n");
 
                    }
@@ -496,28 +470,25 @@ float valorLocacao, x;
                    system ("pause");
 }
 
-void devolucaoBmw()
+void devolucaoArashAF10Hybrid()
 {
 float valorLocacao, x;
                    
                    logoLegalRentACar();
                    
-                   printf ("\t O modelo que voce escolheu e uma BMW.         \n");
+                   printf ("\t Modelo Devolvido: ArashAF10Hybrid         \n");
                    printf ("\t Placa: OTT 6687 \n");
                    printf ("\t Cor Prata  Ano 2009 \n");
-                   printf ("\t Valor da diaria: R$ 400,00                    \n\n");
-//                   printf ("\t Quantos dias voce pretende ficar com o carro ? \n\n");
-//                  scanf ("%f",&x);
-//                   valorLocacao = 400 * x;
-//                   printf ("\t Valor da locação : R$%.00f \n",valorLocacao );
-//                   printf ("\t Para confirma digite 1 Cancelar 2: \n");
+                   printf ("\t Valor da diaria: R$ 400,00                \n");
+//               
+                   printf ("\t Para confirma digite 1 Cancelar 2: \n");
                    scanf ("%f",&x);
 
                    x = verificaEntradaUmOuDois(x);
 
                    if(x == 1)
                    {
-                        bmw=1;
+                        ArashAF10Hybrid=1;
                         printf ("\t Devolução confirmada. Obrigado.\n\n");
 
                    }
@@ -539,19 +510,19 @@ void alugarVeiculo(int menuItem)
     switch(menuItem)
     {
         case 1:
-            locacaoPalio();
+            locacaoAstonMartinMARB00();
             break;
         case 2:
-            locacaoUno();
+            locacaoLaFerrariAperta();
             break;
         case 3:
-            locacaoGol();
+            locacaoBugattiChiron();
             break;
         case 4:
-            locacaoStilo();
+            locacaoKoenigseggRegera();
             break;
         case 5:
-            locacaoBmw();
+            locacaoArashAF10Hybrid();
             break;
     }
 }
@@ -567,19 +538,19 @@ void devolverVeiculo(int menuItem)
     switch(menuItem)
     {
         case 1:
-            devolucaoPalio();
+            devolucaoAstonMartinMARB00();
             break;
         case 2:
-            devolucaoUno();
+            devolucaoLaFerrariAperta();
             break;
         case 3:
-            devolucaoGol();
+            devolucaoBugattiChiron();
             break;
         case 4:
-            devolucaoStilo();
+            devolucaoKoenigseggRegera();
             break;
         case 5:
-            devolucaoBmw();
+            devolucaoArashAF10Hybrid();
             break;
     }
     
@@ -780,7 +751,7 @@ do{
         //printCatalogo(); teste printCatalogo();
 /* código para teste da funçao verificaDesconto();   
  * COM ESSE COMENTÁRIO A FUNÇÃO ESTÁ SENDO 
- * TESTADA EM locacaoPalio();     
+ * TESTADA EM locacaoAston Martin MA-RB00();     
         float test;
         printf("digite um valor:");
         scanf("%f", &test);
