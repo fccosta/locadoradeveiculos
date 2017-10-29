@@ -48,11 +48,11 @@ void printCatalogo()
          printf ("\n\n");
 
          printf ("\t CARROS NÃO DISPONÍVEIS | PREVISÃO DE ENTREGA:  \n\n");
-         if (AstonMartinMARB00 == 0){printf ("\t Aston Martin MA-RB00\t    \t\t\tDATA: %d/%d/%d,  HORA: %d:00\n", &dDevAstonMartinMARB00.dia,  &dDevAstonMartinMARB00.mes, &dDevAstonMartinMARB00.ano, &hDevAstonMartinMARB00);}
-         if (LaFerrariAperta == 0){printf ("\t La Ferrari Aperta\t      \t\t\tDATA: i%/i%/i% as %d:00hs\n", dDevLaFerrariAperta.dia, dDevLaFerrariAperta.mes,  dDevLaFerrariAperta.ano, hDevLaFerrariAperta);}
-         if (BugattiChiron == 0){printf ("\t Bugatti Chiron\t      \t\t\tDATA: i%/i%/i%  as %d:00hs\n",dDevBugattiChiron.dia,dDevBugattiChiron.mes,dDevBugattiChiron.ano, hDevBugattiChiron);}
-         if (KoenigseggRegera == 0){printf ("\t Koenigsegg Regera\t    \t\t\tDATA: i%/i%/i%  as d%:00hs\n",dDevKoenigseggRegera.dia, dDevKoenigseggRegera.mes, dDevKoenigseggRegera.ano, hDevKoenigseggRegera);}
-         if (ArashAF10Hybrid == 0){printf ("\t Arash AF10 Hybrid\t      \t\t\tDATA: i%/i%/i%  as %d:00hs\n",dDevArashAF10Hybrid.dia,dDevArashAF10Hybrid.mes,dDevArashAF10Hybrid.ano, hDevArashAF10Hybrid);}
+         if (AstonMartinMARB00 == 1){printf ("\t Aston Martin MA-RB00    \tDATA: %i/%i/%i  HORA: %d:00hs\n", dDevAstonMartinMARB00.dia,  dDevAstonMartinMARB00.mes, dDevAstonMartinMARB00.ano, hDevAstonMartinMARB00);}
+         if (LaFerrariAperta == 1){printf ("\t La Ferrari Aperta      \tDATA: %i/%i/%i  HORA: %d:00hs\n", dDevLaFerrariAperta.dia, dDevLaFerrariAperta.mes,  dDevLaFerrariAperta.ano, hDevLaFerrariAperta);}
+         if (BugattiChiron == 1){printf ("\t Bugatti Chiron     \t\tDATA: %i/%i/%i  HORA: %d:00hs\n",dDevBugattiChiron.dia,dDevBugattiChiron.mes,dDevBugattiChiron.ano, hDevBugattiChiron);}
+         if (KoenigseggRegera == 1){printf ("\t Koenigsegg Regera    \t\tDATA: %i/%i/%i  HORA: %d:00hs\n",dDevKoenigseggRegera.dia, dDevKoenigseggRegera.mes, dDevKoenigseggRegera.ano, hDevKoenigseggRegera);}
+         if (ArashAF10Hybrid == 1){printf ("\t Arash AF10 Hybrid      \tDATA: %i/%i/%i  HORA: %d:00hs\n",dDevArashAF10Hybrid.dia,dDevArashAF10Hybrid.mes,dDevArashAF10Hybrid.ano, hDevArashAF10Hybrid);}
          printf ("\n\n");
 
 
@@ -99,19 +99,6 @@ void printCatalogo()
         
 
 
-/*         printf ("\t LaFerrariAperta    \n");
-         printf ("\t BugattiChiron    \n");
-         printf ("\t KoenigseggRegera  \n");
-         printf ("\t ArashAF10Hybrid    \n");
-
-         printf ("\t CARROS ALUGADOS:  \n\n");
-         printf ("\t (1) Aston Martin MA-RB00  \n");
-         printf ("\t (2) LaFerrariAperta    \n");
-         printf ("\t (3) BugattiChiron    \n");
-         printf ("\t (4) KoenigseggRegera  \n");
-         printf ("\t (5) ArashAF10Hybrid    \n");
-*/
-
 }
 int printMenuPrincipal() //imprime o menu principal
 {
@@ -157,7 +144,7 @@ int printMenuLocacao() //imprime as opções de veículos
 
 void printTicket(float valor, struct data dataLocacao,struct data dataDevolucao, int hora){
     
-    printf("\t\n\nFUNÇÃO SENDO IMPLEMENTADA.");
+    printf("\t\n\nFUNÇÃO +++ TICKET +++  SENDO IMPLEMENTADA.");
     
     /*
     printf("\tValor Final: R$%.2f\n",valor)
@@ -202,8 +189,8 @@ float valorLocacao, x;
                         AstonMartinMARB00=0;
                         printf ("\t Locação confirmada. Obrigado. \n\n");
                         printf ("\t Modelo Escolhido: Aston Martin MA-RB00.        \n");
-                        
-                //        printTicket(valorLocacao, dLocAston Martin MA-RB00, dDevAston Martin MA-RB00, hLocAston Martin MA-RB00, hDevAston Martin MA-RB00);
+                                          
+                       // printTicket(valorLocacao, dLocAstonMartinMARB00, dDevAstonMartinMARB00, hLocAstonMartinMARB00, hDevAstonMartinMARB00);
 
                    }
                    else if (x == 2)
@@ -477,10 +464,7 @@ float valorLocacao, x;
                    logoLegalRentACar();
                    
                    printf ("\t Modelo Devolvido: ArashAF10Hybrid         \n");
-                   printf ("\t Placa: OTT 6687 \n");
-                   printf ("\t Cor Prata  Ano 2009 \n");
-                   printf ("\t Valor da diaria: R$ 400,00                \n");
-//               
+                                  
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
                    scanf ("%f",&x);
 
