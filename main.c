@@ -104,64 +104,6 @@ void printCatalogo()
          if (ArashAF10Hybrid == 0){printf ("\t Arash AF10 Hybrid    \t %d/%d/%d\n",dDevAstonMartinMARB00.tm_mday-1,dDevAstonMartinMARB00.tm_mon+1,dDevAstonMartinMARB00.tm_year+1900);}
          printf ("\n\n");
 
-
-
-
-         
-
-         //codigo provisório
-/*
-        struct diaMesAno{
-            int dia;
-            int mes;
-            int ano;
-
-         };
-         */
-        // struct diaMesAno dataLocacao;
-/*
-         struct diaMesAno dataLocacao;
-
-         dataLocacao.dia = strftime(data, 20, "%d-%m-%y", tm);
-
-         printf("dia %i\n\n", dataLocacao.dia);
-
-         printf("Data : %d-%m-%y Hora:%s \n\n",__DATE__,__TIME__);
-*/
-         //
-
-        // código...
-         
-         struct tm * tm;
-         time_t t;
-         //time_t t, data;
-         char data[20];
-
-         time(&t);
-         tm = localtime(&t);
-         strftime(data, 20, "%d-%m-%y", tm);
-         
-         printf("\tDATA ANTES DA MULTIPLICAÇÃO: \n\n");
-
-         printf("\tDATA: %s, Hora: %s\n\n", data, __TIME__);
-         printf("\t%i, Hora: %s\n\n", tm->tm_mday, __TIME__);
-         
-         printf("\tDATA APÓS A MULTIPLICAÇÃO: \n\n");
-         /*
-        time_t hoje;//, data;
-        time(&hoje);
-        data = hoje - 90*24*60*60;
-        */
-        tm = tm - (90*24*60*60);
-        strftime(data, 20, "%d-%m-%y", tm);
-        printf("\t%s, Hora: %s\n\n", data, __TIME__);
-        printf("\t%i, Hora: %s\n\n", tm->tm_mday, __TIME__);
-        // printf("%s, Hora: %s\n\n", , __TIME__);
-
-         
-        
-
-
 }
 int printMenuPrincipal() //imprime o menu principal
 {
