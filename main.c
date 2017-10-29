@@ -1,10 +1,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <time.h>
-//#include <iso646.h>
-//# include <conio.h>   // necessário para as funções clrscr e getch
-//int AstonMartinMARB00, LaFerrariAperta, BugattiChiron, KoenigseggRegera, bmw;
-time_t t;
 
 int AstonMartinMARB00 = 1;
 int LaFerrariAperta = 1;
@@ -13,18 +9,71 @@ int KoenigseggRegera = 1;
 int ArashAF10Hybrid = 1;
 int sair = 1;
 
-struct data{
-            int dia;
-            int mes;
-            int ano;
-
-         };
-
-struct data dLocAstonMartinMARB00, dDevAstonMartinMARB00, dLocLaFerrariAperta,dDevLaFerrariAperta, dLocBugattiChiron, dDevBugattiChiron, dLocKoenigseggRegera, dDevKoenigseggRegera, dLocArashAF10Hybrid, dDevArashAF10Hybrid;
+time_t timer;//usada da funão resolverDatas
+struct tm dLocAstonMartinMARB00, dDevAstonMartinMARB00, dLocLaFerrariAperta,dDevLaFerrariAperta, dLocBugattiChiron, dDevBugattiChiron, dLocKoenigseggRegera, dDevKoenigseggRegera, dLocArashAF10Hybrid, dDevArashAF10Hybrid;
 
 int hLocAstonMartinMARB00, hDevAstonMartinMARB00, hLocLaFerrariAperta, hDevLaFerrariAperta, hLocBugattiChiron, hDevBugattiChiron, hLocKoenigseggRegera, hDevKoenigseggRegera, hLocArashAF10Hybrid, hDevArashAF10Hybrid;
 
-
+resolverDatas(struct tm *date1, struct tm *date2, int diasAMais)
+    {
+    /* essa função recebe as structs e prenche as variáveis
+     * para cada locação será necessário chama-la, isso para que as datas 
+     * fiquem armazenadas nas variáveis. A princípio as datas estão vazias, 
+     * a função que irá parametiza-la.
+     * date1 = data de locação 
+     * date2 = data de devolução
+     * diasAMais = número de dias que o veículos estará em posse do locatário
+     */
+    
+    /*
+     CODIGO ORIGINAL
+     Fonte: http://cssimplified.com/c-programming/write-a-program-in-c-to-add-the-given-number-of-days-to-the-current-date-and-print-the-final-resultant-date-for-e-g-adding-12-days-to-22082005-will-result-in-03092005-10m-dec2005
+     Referência para a criação da função resolveDatas()    
+    #include <time.h>
+    #include <stdio.h>
+    void  main()
+    {
+        struct tm date = {0} ;
+        time_t timer;
+        clrscr();
+        timer=time(NULL);
+        date = *gmtime( &timer ) ;
+        //printf("%s",asctime(localtime(&timer)));
+        printf("%d/%d/%d\n",date.tm_mday-1,date.tm_mon+1,date.tm_year+1900);
+        date.tm_year = date.tm_year;
+        date.tm_mon = date.tm_mon;
+        date.tm_mday = date.tm_mday + 12;
+        timer = mktime( &date ) ;
+        date = *gmtime( &timer ) ;
+        //printf("%s",asctime(localtime(&timer)));
+        printf("%d/%d/%d\n",date.tm_mday-1,date.tm_mon+1,date.tm_year+1900);
+        getch();
+    }
+     */
+    
+    /*
+     * é necessário criar as datas como variáveis globais, para cada 
+     * carro haverá datas relacionadas a locação e devolução, para
+     * chama-las na função, de qualquer lugar do sistema.
+     * struct tm dataLocNomeCarro = {0}, datDevNomeCarro = {0} ;
+     * time_t timer;
+     * resolverDatas(&dataLocaNomeCarro, &dataDevNomeCarro, dias);
+     */
+    timer=time(NULL);
+    (*date1) = *gmtime( &timer ) ;//essa é a primeira data, a data de locação, preenchida a partir do sistema
+    //printf("Data Locação: %d/%d/%d\n",(*date1).tm_mday-1,(*date1).tm_mon+1,(*date1).tm_year+1900);
+    (*date2).tm_year = (*date1).tm_year;
+    (*date2).tm_mon = (*date1).tm_mon;
+    (*date2).tm_mday = (*date1).tm_mday + diasAMais;
+    timer = mktime( (*&date2) ) ;
+    (*date2) = *gmtime( &timer ) ;
+    //printf("Data Devolução: %d/%d/%d\n",(*date2).tm_mday-1,(*date2).tm_mon+1,(*date2).tm_year+1900);
+    /*
+     * Na função main() usar :
+     * printf("Data Locação: %d/%d/%d\n",dataLocaNomeCarro.tm_mday-1,dataLocaNomeCarro.tm_mon+1,dataLocaNomeCarro.tm_year+1900);
+     * printf("Data Devolução: %d/%d/%d\n",dataDevNomeCarro.tm_mday-1,dataDevNomeCarro.tm_mon+1,dataDevNomeCarro.tm_year+1900);
+     */
+    }
 
 void logoLegalRentACar()
     {
@@ -47,21 +96,18 @@ void printCatalogo()
          if (ArashAF10Hybrid == 1){printf ("\t Arash AF10 Hybrid  \n");}
          printf ("\n\n");
          
-         printf ("\t CARROS NÃO DISPONÍVEIS | PREVISÃO DE ENTREGA:  \n\n");
-         if (AstonMartinMARB00 == 0){printf ("\t Aston Martin MA-RB00    \tDATA: %i/%i/%i  HORA: %d:00hs\n", dDevAstonMartinMARB00.dia,  dDevAstonMartinMARB00.mes, dDevAstonMartinMARB00.ano, hDevAstonMartinMARB00);}
-         if (LaFerrariAperta == 0){printf ("\t La Ferrari Aperta      \tDATA: %i/%i/%i  HORA: %d:00hs\n", dDevLaFerrariAperta.dia, dDevLaFerrariAperta.mes,  dDevLaFerrariAperta.ano, hDevLaFerrariAperta);}
-         if (BugattiChiron == 0){printf ("\t Bugatti Chiron     \t\tDATA: %i/%i/%i  HORA: %d:00hs\n",dDevBugattiChiron.dia,dDevBugattiChiron.mes,dDevBugattiChiron.ano, hDevBugattiChiron);}
-         if (KoenigseggRegera == 0){printf ("\t Koenigsegg Regera    \t\tDATA: %i/%i/%i  HORA: %d:00hs\n",dDevKoenigseggRegera.dia, dDevKoenigseggRegera.mes, dDevKoenigseggRegera.ano, hDevKoenigseggRegera);}
-         if (ArashAF10Hybrid == 0){printf ("\t Arash AF10 Hybrid      \tDATA: %i/%i/%i  HORA: %d:00hs\n",dDevArashAF10Hybrid.dia,dDevArashAF10Hybrid.mes,dDevArashAF10Hybrid.ano, hDevArashAF10Hybrid);}
+         printf ("\t CARROS NÃO DISPONÍVEIS | DATA DE LOC | PREVISÃO DE ENTREGA:  \n\n");
+         if (AstonMartinMARB00 == 0){printf ("\t Aston Martin MA-RB00  \t  %d/%d/%d\t  %d/%d/%d\n",dLocAstonMartinMARB00.tm_mday,dLocAstonMartinMARB00.tm_mon+1,dLocAstonMartinMARB00.tm_year+1900, dDevAstonMartinMARB00.tm_mday,dDevAstonMartinMARB00.tm_mon+1,dDevAstonMartinMARB00.tm_year+1900);}
+         if (LaFerrariAperta == 0){printf ("\t La Ferrari Aperta    \t %d/%d/%d\n",dDevAstonMartinMARB00.tm_mday-1,dDevAstonMartinMARB00.tm_mon+1,dDevAstonMartinMARB00.tm_year+1900);}
+         if (BugattiChiron == 0){printf ("\t Bugatti Chiron   \t\t %d/%d/%d\n",dDevAstonMartinMARB00.tm_mday-1,dDevAstonMartinMARB00.tm_mon+1,dDevAstonMartinMARB00.tm_year+1900);}
+         if (KoenigseggRegera == 0){printf ("\t Koenigsegg Regera  \t\t %d/%d/%d\n",dDevAstonMartinMARB00.tm_mday-1,dDevAstonMartinMARB00.tm_mon+1,dDevAstonMartinMARB00.tm_year+1900);}
+         if (ArashAF10Hybrid == 0){printf ("\t Arash AF10 Hybrid    \t %d/%d/%d\n",dDevAstonMartinMARB00.tm_mday-1,dDevAstonMartinMARB00.tm_mon+1,dDevAstonMartinMARB00.tm_year+1900);}
          printf ("\n\n");
 
 
 
 
-         struct tm * tm;
-         time_t t;
-
-         char data[20];
+         
 
          //codigo provisório
 /*
@@ -85,14 +131,31 @@ void printCatalogo()
          //
 
         // código...
-
+         
+         struct tm * tm;
+         time_t t;
+         //time_t t, data;
+         char data[20];
 
          time(&t);
          tm = localtime(&t);
          strftime(data, 20, "%d-%m-%y", tm);
+         
+         printf("\tDATA ANTES DA MULTIPLICAÇÃO: \n\n");
 
-         printf("\t%s, Hora: %s\n\n", data, __TIME__);
+         printf("\tDATA: %s, Hora: %s\n\n", data, __TIME__);
          printf("\t%i, Hora: %s\n\n", tm->tm_mday, __TIME__);
+         
+         printf("\tDATA APÓS A MULTIPLICAÇÃO: \n\n");
+         /*
+        time_t hoje;//, data;
+        time(&hoje);
+        data = hoje - 90*24*60*60;
+        */
+        tm = tm - (90*24*60*60);
+        strftime(data, 20, "%d-%m-%y", tm);
+        printf("\t%s, Hora: %s\n\n", data, __TIME__);
+        printf("\t%i, Hora: %s\n\n", tm->tm_mday, __TIME__);
         // printf("%s, Hora: %s\n\n", , __TIME__);
 
          
@@ -142,7 +205,7 @@ int printMenuLocacao() //imprime as opções de veículos
          return x;
 }
 
-void printTicket(float valor, struct data dataLocacao,struct data dataDevolucao, int hora){
+void printTicket(float valor, struct tm *dataLocacao, struct tm *dataDevolucao, int hora){
     
     printf("\t\n\nFUNÇÃO +++ TICKET +++  SENDO IMPLEMENTADA.");
     
@@ -168,13 +231,8 @@ float valorLocacao, x;
                    scanf ("%f",&x);
                    valorLocacao = 28800 * x;
                    //valorLocacao = verificarDesconto(valorLocacao);
-                   printf("\tData de locação:(somente números)\n");
-                   printf("\tDia:");
-                   scanf("%d", &dLocAstonMartinMARB00.dia);
-                   printf("\tMês:");
-                   scanf("%d", &dLocAstonMartinMARB00.mes);
-                   //printf("\tAno:\n");
-                   dLocAstonMartinMARB00.ano = 2017;
+                   
+                   resolverDatas(&dLocAstonMartinMARB00, &dDevAstonMartinMARB00, x);
                    
                    printf ("\t Valor da locação : R$%.2f \n",valorLocacao );
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
