@@ -173,14 +173,15 @@ float valorLocacao, x;
                    printf ("\t Digite a quantidade de dias de locação:\n");
                    scanf ("%f",&x);
                    valorLocacao = 28800 * x;
-                   //valorLocacao = verificarDesconto(valorLocacao);
+                   
+                   printf ("\t Valor da locação : R$%.2f \n\n",valorLocacao );
+                   
+                   verificarDesconto(&valorLocacao);
                    
                    resolverDatas(&dLocAstonMartinMARB00, &dDevAstonMartinMARB00, x);
                    
-                   printf ("\t Valor da locação : R$%.2f \n",valorLocacao );
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
-                  // printf ("\t (1) SIM \n");
-                  // printf ("\t (2) NAO \n");
+     
                    scanf ("%f",&x);
                    
                    x = verificaEntradaUmOuDois((int)x);
@@ -189,7 +190,7 @@ float valorLocacao, x;
                    {
                         AstonMartinMARB00=0;
                         printf ("\t Locação confirmada. Obrigado. \n\n");
-                        printf ("\t Modelo Escolhido: Aston Martin MA-RB00.        \n");
+                        printf ("\t Modelo Escolhido: Aston Martin MA-RB00.        \n\n");
                                           
                        // printTicket(valorLocacao, dLocAstonMartinMARB00, dDevAstonMartinMARB00, hLocAstonMartinMARB00, hDevAstonMartinMARB00);
 
@@ -585,34 +586,34 @@ int verificarSair(int x ){
        
 }
 
-float verificarDesconto(float valor)
+void verificarDesconto(float *valor)
 {    
     int x;
-    printf("\tAPLICAR DESCONTO.\n");
-    printf("\t(1)Idoso.\n");
-    printf("\t(2)Empresa parceira.\n");
-    printf("\t(0)Sem desconto.\n");
+    printf("\t APLICAR DESCONTO.\n");
+    printf("\t (1)Idoso.\n");
+    printf("\t (2)Empresa parceira.\n");
+    printf("\t (0)Sem desconto.\n");
 
     scanf("%i", &x);
     
     while (x<0 || x>2)
         {
-            printf("\tPor gentileza, digite 1, 2 ou 0.\n");
+            printf("\t\t Por gentileza, digite 1, 2 ou 0.\n\n");
             scanf("%i", &x);
             //verificarDesconto(valor);//scanf("%i", &valor);
         }
         if (x == 1)
         {
-            printf("\tValor com 10%% de Desconto: R$%.2f\n", valor*0.9);
-            return valor*0.9;
+            printf("\t Valor da locação com 10%% de Desconto: R$%.2f\n\n", *valor*0.9);
+            *valor = *valor*0.9;
 
         }else if (x == 2)
         {
-            printf("\tValor com 5%% de Desconto: R$%.2f\n", valor*0.95);
-            return valor*0.95;
+            printf("\t Valor da locação com 5%% de Desconto: R$%.2f\n\n", *valor*0.95);
+            *valor = *valor*0.95;
         }else if (x == 0)
         {
-            return valor*1.0;
+            *valor = *valor*1.0;
         }
     //return valor;
 }
@@ -632,64 +633,19 @@ do{
         float test;
         printf("digite um valor:");
         scanf("%f", &test);
+ * 
         printf(verificarDesconto(test));
  */   
         menuItem = printMenuPrincipal();
          
         escolhaMenuPrincipal(menuItem);
         
-        //scanf ("%i",&menuItem);
-        /* void escolhaMenuPrincipal(int escolha)
-         {
-            switch(escolha)
-            {
-                case 1:
-                    printCatalogo();
-                    break;
-                case 2:
-                    printMenuLocacao();                
-                    alugarVeiculo();                
-                    break;           
-                case 3:
-                    //devolver veiculo
-                    break;
-                case 0:
-                    //sair             
-                    break;
-            }  
-         }
-        */
 
-        //printMenuLocacao();
-        
         
         printf("\tMenu principal-DIGITE 1 - Sair do programa - DIGITE OUTRO NÚMERO.\n");
         scanf("%i", &sair);
 
         sair = verificarSair(sair);
-
-        /*
-        void verificaEntradaUmOuDois(int valor)
-        {
-            int a=0;
-            do
-            {
-                if (valor == 1)
-                    {
-                        a = 1;
-                    }
-                if(valor == 2)
-                    {
-                        a = 1;
-                    }
-                if(a==0)
-                    {
-                        printf("Por gentileza, digite 1 ou 2.\n");
-                        scanf("%i", &valor);
-                    }
-            }while(a==0);
-        }
-        */
 
     }
     while(sair == 1);
