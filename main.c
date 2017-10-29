@@ -46,13 +46,13 @@ void printCatalogo()
          if (KoenigseggRegera == 1){printf ("\t Koenigsegg Regera  \n");}
          if (ArashAF10Hybrid == 1){printf ("\t Arash AF10 Hybrid  \n");}
          printf ("\n\n");
-
+         
          printf ("\t CARROS NÃO DISPONÍVEIS | PREVISÃO DE ENTREGA:  \n\n");
-         if (AstonMartinMARB00 == 1){printf ("\t Aston Martin MA-RB00    \tDATA: %i/%i/%i  HORA: %d:00hs\n", dDevAstonMartinMARB00.dia,  dDevAstonMartinMARB00.mes, dDevAstonMartinMARB00.ano, hDevAstonMartinMARB00);}
-         if (LaFerrariAperta == 1){printf ("\t La Ferrari Aperta      \tDATA: %i/%i/%i  HORA: %d:00hs\n", dDevLaFerrariAperta.dia, dDevLaFerrariAperta.mes,  dDevLaFerrariAperta.ano, hDevLaFerrariAperta);}
-         if (BugattiChiron == 1){printf ("\t Bugatti Chiron     \t\tDATA: %i/%i/%i  HORA: %d:00hs\n",dDevBugattiChiron.dia,dDevBugattiChiron.mes,dDevBugattiChiron.ano, hDevBugattiChiron);}
-         if (KoenigseggRegera == 1){printf ("\t Koenigsegg Regera    \t\tDATA: %i/%i/%i  HORA: %d:00hs\n",dDevKoenigseggRegera.dia, dDevKoenigseggRegera.mes, dDevKoenigseggRegera.ano, hDevKoenigseggRegera);}
-         if (ArashAF10Hybrid == 1){printf ("\t Arash AF10 Hybrid      \tDATA: %i/%i/%i  HORA: %d:00hs\n",dDevArashAF10Hybrid.dia,dDevArashAF10Hybrid.mes,dDevArashAF10Hybrid.ano, hDevArashAF10Hybrid);}
+         if (AstonMartinMARB00 == 0){printf ("\t Aston Martin MA-RB00    \tDATA: %i/%i/%i  HORA: %d:00hs\n", dDevAstonMartinMARB00.dia,  dDevAstonMartinMARB00.mes, dDevAstonMartinMARB00.ano, hDevAstonMartinMARB00);}
+         if (LaFerrariAperta == 0){printf ("\t La Ferrari Aperta      \tDATA: %i/%i/%i  HORA: %d:00hs\n", dDevLaFerrariAperta.dia, dDevLaFerrariAperta.mes,  dDevLaFerrariAperta.ano, hDevLaFerrariAperta);}
+         if (BugattiChiron == 0){printf ("\t Bugatti Chiron     \t\tDATA: %i/%i/%i  HORA: %d:00hs\n",dDevBugattiChiron.dia,dDevBugattiChiron.mes,dDevBugattiChiron.ano, hDevBugattiChiron);}
+         if (KoenigseggRegera == 0){printf ("\t Koenigsegg Regera    \t\tDATA: %i/%i/%i  HORA: %d:00hs\n",dDevKoenigseggRegera.dia, dDevKoenigseggRegera.mes, dDevKoenigseggRegera.ano, hDevKoenigseggRegera);}
+         if (ArashAF10Hybrid == 0){printf ("\t Arash AF10 Hybrid      \tDATA: %i/%i/%i  HORA: %d:00hs\n",dDevArashAF10Hybrid.dia,dDevArashAF10Hybrid.mes,dDevArashAF10Hybrid.ano, hDevArashAF10Hybrid);}
          printf ("\n\n");
 
 
