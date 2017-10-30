@@ -152,9 +152,6 @@ void printTicket(float valor, struct tm *dataLocacao, struct tm *dataDevolucao){
     
     //printf("\t FUNÇÃO +++ TICKET +++  SENDO IMPLEMENTADA.\n\n");
     
-    system("cls");
-    logoLegalRentACar();
-    
     printf("\t======================TICKET DO CLIENTE======================\n");
     printf("\t VALOR DA LOCAÇÃO:\t\t R$%.2f\n",valor);
     printf("\t DATA LOCAÇAO:\t\t\t %d/%d/%d às %d:00h\n",(*dataLocacao).tm_mday-1,(*dataLocacao).tm_mon+1,(*dataLocacao).tm_year+1900, HORA_LOCACAO);    
@@ -190,6 +187,8 @@ float valorLocacao, x;
                    if(x == 1)
                    {
                         AstonMartinMARB00=0;
+                        system("cls");
+                        logoLegalRentACar();
                         printf ("\t LOCAÇÃO CONFIRMADA. OBRIGADO. \n\n");
                         printf ("\t Modelo Escolhido: Aston Martin MA-RB00.        \n\n");
                                           
@@ -198,6 +197,8 @@ float valorLocacao, x;
                    }
                    else if (x == 2)
                    {
+                        system("cls");
+                        logoLegalRentACar();
                         printf ("\t LOCAÇÃO CANCELADA!\n\n");
                    }
 
