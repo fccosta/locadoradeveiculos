@@ -158,6 +158,21 @@ void printTicket(float valor, struct tm *dataLocacao, struct tm *dataDevolucao){
    
 }
 
+void verificarAtrasoDevolucao(int valorDiaria )
+{
+    int aux;
+    float multa;
+    printf("\n\t Horas de atraso na entrega(se não houve atraso digite 0):\n\n");
+    scanf("%d", &aux);
+    if(aux > 0)
+        {
+            multa = aux * (valorDiaria/24);
+            printf("\t MULTA POR ATRASO: R$ %.2f\n\n", multa);
+        }else if(aux == 0)
+            {
+                printf("\t NÃO HÁ MULTAS A PAGAR.\n\n");
+            }
+}
 void locacaoFusca()
 {
 float valorLocacao, x;
@@ -210,6 +225,8 @@ float valorLocacao, x;
                    logoLegalRentACar();
                    
                    printf ("\t MODELO EM DEVOLUÇÃO: Fusca.        \n");
+                   
+                   verificarAtrasoDevolucao(240);// valor da diária: R$ 240,00
                
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
 
@@ -275,10 +292,9 @@ float valorLocacao, x;
                    logoLegalRentACar();
                    
                    printf ("\t MODELO EM DEVOLUÇÃO: Chevette.          \n");
-//                   printf ("\t Quantos dias voce pretende ficar com o carro ? \n");
-//                   scanf ("%f",&x);
-//                   valorLocacao = 120 * x;
-//                   printf ("\t Valor da locação : R$%.00f \n",valorLocacao );
+
+                   verificarAtrasoDevolucao(240);// valor da diária: R$ 240,00
+                   
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
 
                    scanf ("%f",&x);
@@ -348,6 +364,8 @@ float valorLocacao, x;
                    logoLegalRentACar();
                    
                    printf ("\t MODELO EM DEVOLUÇÃO: Kombi.\n");
+                   
+                   verificarAtrasoDevolucao(240);// valor da diária: R$ 240,00
 
                    printf ("\t Para confirmar digite 1 Cancelar 2: \n");
                    scanf ("%f",&x);
@@ -417,6 +435,8 @@ float valorLocacao, x;
                    logoLegalRentACar();
                    
                    printf ("\t MODELO EM DEVOLUÇÃO: Belina.        \n");
+                   
+                   verificarAtrasoDevolucao(240);// valor da diária: R$ 240,00
                   
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
                    scanf ("%f",&x);
@@ -485,6 +505,8 @@ float valorLocacao, x;
                    logoLegalRentACar();
                    
                    printf ("\t MODELO EM DEVOLUÇÃO: Brasilia         \n");
+                   
+                   verificarAtrasoDevolucao(240);// valor da diária: R$ 240,00
                                   
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
                    scanf ("%f",&x);
