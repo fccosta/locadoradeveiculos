@@ -98,11 +98,11 @@ void printCatalogo()
          printf ("\n\n");
          
          printf ("\t CARROS NÃO DISPONÍVEIS | DATA DE LOC | PREVISÃO DE ENTREGA:  \n\n");
-         if (AstonMartinMARB00 == 0){printf ("\t Aston Martin MA-RB00  \t  %d/%d/%d\t%d/%d/%d às %d:00h\n",dLocAstonMartinMARB00.tm_mday,dLocAstonMartinMARB00.tm_mon+1,dLocAstonMartinMARB00.tm_year+1900, dDevAstonMartinMARB00.tm_mday,dDevAstonMartinMARB00.tm_mon+1,dDevAstonMartinMARB00.tm_year+1900, HORA_LOCACAO);}
-         if (LaFerrariAperta == 0){printf ("\t La Ferrari Aperta    \t  %d/%d/%d\t%d/%d/%d às %d:00h\n",dLocLaFerrariAperta.tm_mday,dLocLaFerrariAperta.tm_mon+1,dLocLaFerrariAperta.tm_year+1900, dDevLaFerrariAperta.tm_mday,dDevLaFerrariAperta.tm_mon+1,dDevLaFerrariAperta.tm_year+1900, HORA_LOCACAO);}
-         if (BugattiChiron == 0){printf ("\t Bugatti Chiron   \t  %d/%d/%d\t%d/%d/%d às %d:00h\n",dLocBugattiChiron.tm_mday,dLocBugattiChiron.tm_mon+1,dLocBugattiChiron.tm_year+1900, dDevBugattiChiron.tm_mday,dDevBugattiChiron.tm_mon+1,dDevBugattiChiron.tm_year+1900, HORA_LOCACAO);}
-         if (KoenigseggRegera == 0){printf ("\t Koenigsegg Regera  \t  %d/%d/%d\t%d/%d/%d às %d:00h\n",dLocKoenigseggRegera.tm_mday,dLocKoenigseggRegera.tm_mon+1,dLocKoenigseggRegera.tm_year+1900, dDevKoenigseggRegera.tm_mday,dDevKoenigseggRegera.tm_mon+1,dDevKoenigseggRegera.tm_year+1900, HORA_LOCACAO);}
-         if (ArashAF10Hybrid == 0){printf ("\t Arash AF10 Hybrid    \t  %d/%d/%d\t%d/%d/%d às %d:00h\n",dLocArashAF10Hybrid.tm_mday,dLocArashAF10Hybrid.tm_mon+1,dLocArashAF10Hybrid.tm_year+1900, dDevAstonMartinMARB00.tm_mday,dDevArashAF10Hybrid.tm_mon+1,dDevArashAF10Hybrid.tm_year+1900, HORA_LOCACAO);}
+         if (AstonMartinMARB00 == 0){printf ("\t Aston Martin MA-RB00  \t  %d/%d/%d\t%d/%d/%d às %d:00h\n",dLocAstonMartinMARB00.tm_mday-1,dLocAstonMartinMARB00.tm_mon+1,dLocAstonMartinMARB00.tm_year+1900, dDevAstonMartinMARB00.tm_mday-1,dDevAstonMartinMARB00.tm_mon+1,dDevAstonMartinMARB00.tm_year+1900, HORA_LOCACAO);}
+         if (LaFerrariAperta == 0){printf ("\t La Ferrari Aperta    \t  %d/%d/%d\t%d/%d/%d às %d:00h\n",dLocLaFerrariAperta.tm_mday-1,dLocLaFerrariAperta.tm_mon+1,dLocLaFerrariAperta.tm_year+1900, dDevLaFerrariAperta.tm_mday-1,dDevLaFerrariAperta.tm_mon+1,dDevLaFerrariAperta.tm_year+1900, HORA_LOCACAO);}
+         if (BugattiChiron == 0){printf ("\t Bugatti Chiron   \t  %d/%d/%d\t%d/%d/%d às %d:00h\n",dLocBugattiChiron.tm_mday-1,dLocBugattiChiron.tm_mon+1,dLocBugattiChiron.tm_year+1900, dDevBugattiChiron.tm_mday-1,dDevBugattiChiron.tm_mon+1,dDevBugattiChiron.tm_year+1900, HORA_LOCACAO);}
+         if (KoenigseggRegera == 0){printf ("\t Koenigsegg Regera  \t  %d/%d/%d\t%d/%d/%d às %d:00h\n",dLocKoenigseggRegera.tm_mday-1,dLocKoenigseggRegera.tm_mon+1,dLocKoenigseggRegera.tm_year+1900, dDevKoenigseggRegera.tm_mday-1,dDevKoenigseggRegera.tm_mon+1,dDevKoenigseggRegera.tm_year+1900, HORA_LOCACAO);}
+         if (ArashAF10Hybrid == 0){printf ("\t Arash AF10 Hybrid    \t  %d/%d/%d\t%d/%d/%d às %d:00h\n",dLocArashAF10Hybrid.tm_mday-1,dLocArashAF10Hybrid.tm_mon+1,dLocArashAF10Hybrid.tm_year+1900, dDevAstonMartinMARB00.tm_mday-1,dDevArashAF10Hybrid.tm_mon+1,dDevArashAF10Hybrid.tm_year+1900, HORA_LOCACAO);}
          printf ("\n\n");
 
 }
@@ -142,24 +142,25 @@ int printMenuLocacao() //imprime as opções de veículos
          if(x<0 ||x>5)
             {
                 system ("cls");
-                printf ("\tValor inválido. Por gentileza, digite um valor válido:\n\n");
+                printf ("\t Valor inválido. Por gentileza, digite um valor válido:\n\n");
                 printMenuLocacao();
             }
          return x;
 }
 
-void printTicket(float valor, struct tm *dataLocacao, struct tm *dataDevolucao, int hora){
+void printTicket(float valor, struct tm *dataLocacao, struct tm *dataDevolucao){
     
-    printf("\t\n\nFUNÇÃO +++ TICKET +++  SENDO IMPLEMENTADA.");
+    //printf("\t FUNÇÃO +++ TICKET +++  SENDO IMPLEMENTADA.\n\n");
     
-    /*
-    printf("\tValor Final: R$%.2f\n",valor)
-    printf("\tData/Hora de Locação: i%/i%/i% / às i%:00hs\n",dataLocacao.dia,dataLocacao.mes,dataLocacao.ano,hora);     
-    printf("\tData/Hora de Devolução: i%/i%/i% / às i%:00hs\n",dataDevolucao.dia,dataDevolucao.mes,dataDevolucao.ano,hora);     
- 
-     
-     */
+    system("cls");
+    logoLegalRentACar();
     
+    printf("\t======================TICKET DO CLIENTE======================\n");
+    printf("\t VALOR DA LOCAÇÃO:\t\t R$%.2f\n",valor);
+    printf("\t DATA LOCAÇAO:\t\t\t %d/%d/%d às %d:00h\n",(*dataLocacao).tm_mday-1,(*dataLocacao).tm_mon+1,(*dataLocacao).tm_year+1900, HORA_LOCACAO);    
+    printf("\t DATA DEVOLUÇÃO:\t\t %d/%d/%d às %d:00h\n",(*dataDevolucao).tm_mday-1,(*dataDevolucao).tm_mon+1,(*dataDevolucao).tm_year+1900, HORA_LOCACAO);   
+    printf("\t=================REIMPRESSÃO NAO DISPONÍVEL==================\n\n");
+   
 }
 
 void locacaoAstonMartinMARB00()
@@ -189,15 +190,15 @@ float valorLocacao, x;
                    if(x == 1)
                    {
                         AstonMartinMARB00=0;
-                        printf ("\t Locação confirmada. Obrigado. \n\n");
+                        printf ("\t LOCAÇÃO CONFIRMADA. OBRIGADO. \n\n");
                         printf ("\t Modelo Escolhido: Aston Martin MA-RB00.        \n\n");
                                           
-                       // printTicket(valorLocacao, dLocAstonMartinMARB00, dDevAstonMartinMARB00, hLocAstonMartinMARB00, hDevAstonMartinMARB00);
+                        printTicket(valorLocacao, &dLocAstonMartinMARB00, &dDevAstonMartinMARB00);
 
                    }
                    else if (x == 2)
                    {
-                        printf ("\t Locação Cancelada!\n\n");
+                        printf ("\t LOCAÇÃO CANCELADA!\n\n");
                    }
 
 }
@@ -208,12 +209,8 @@ float valorLocacao, x;
                    
                    logoLegalRentACar();
                    
-                   printf ("\t Modelo Devolvido: Aston Martin MA-RB00.        \n");
-                // printf ("\t Valor da diaria: R$ 100,00                    \n");
- //                  printf ("\t Quantos dias voce pretende ficar com o carro ? \n");
- //                  scanf ("%f",&x);
- //                  valorLocacao = 100 * x;
- //                  printf ("\t Valor da locação : R$%.00f \n",valorLocacao );
+                   printf ("\t MODELO DEVOLVIDO: Aston Martin MA-RB00.        \n");
+               
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
 
                    scanf ("%f",&x);
@@ -223,11 +220,11 @@ float valorLocacao, x;
                    if(x == 1)
                    {
                         AstonMartinMARB00=1;
-                        printf ("\t Devolução Confirmada. Obrigado. \n\n");
+                        printf ("\t DEVOLUÇÃO CONFIRMADA. OBRIGADO. \n\n");
                    }
                    else if (x == 2)
                    {
-                        printf ("\t Devolução Cancelada!\n\n");
+                        printf ("\t DEVOLUÇÃO CANSELADA!\n\n");
                    }
 
  }
@@ -577,10 +574,13 @@ int verificarSair(int x ){
             return x;
         }else
         {
-            system ("cls");
+            //logoLegalRentACar();            
+            
+            printf ("\n\n\n");
             printf ("\t=============================================================\n");
             printf ("\t=====================PROGRAMA FINALIZADO=====================\n");
             printf ("\t=============================================================\n\n");
+            printf ("\n\n\n");
             return 0;
     }
        
@@ -642,7 +642,7 @@ do{
         
 
         
-        printf("\tMenu principal-DIGITE 1 - Sair do programa - DIGITE OUTRO NÚMERO.\n");
+        printf("\t Menu principal-DIGITE 1 - Sair do programa - DIGITE OUTRO NÚMERO.\n");
         scanf("%i", &sair);
 
         sair = verificarSair(sair);
