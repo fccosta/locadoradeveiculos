@@ -625,9 +625,9 @@ int verificarStatusVeiculo(int idMenu, int evento)//carro = nome do veículo; ev
         switch(carro)
         {
             case 0:
-                printf("\t VEÍCULO ALUGADO.\n\n"
-                        "\t POR GENTILEZA, ESCOLHA OUTRO VEÍCULO.\n\n");
-                        
+                printf("\t VEÍCULO INDISPONÍVEL/ALUGADO.\n\n"
+                        "\t LOCAÇÃO NÃO PODE SER FINALIZADA\n\n");
+                                               
                 aux = 0;
                 break;
         }
@@ -638,11 +638,7 @@ int verificarStatusVeiculo(int idMenu, int evento)//carro = nome do veículo; ev
         {
             case 1:
                 printf("\t VEÍCULO NÃO ESTÁ ALUGADO.\n\n"
-                        "\t POR GENTILEZA, VERIFIQUE\n"
-                        "\t SE OS DADOS DIGITADOS ESTÃO\n"
-                        "\t CORRETOS, OU CONSULTE O \n"
-                        "\t CATÁLOGO DE VEÍCULOS ALUGADOS\n"
-                        "\t E DISPONÍVEIS.\n");
+                        "\t DEVOLUÇÃO NÃO PODE SER FINALIZADA\n\n");
                 aux = 0;
                 break;
         }
