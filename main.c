@@ -10,7 +10,7 @@ int Brasilia = 1;
 int sair = 1;
 const int HORA_LOCACAO = 12, LOCACAO = 1, DEVOLUCAO = 0; 
 
-time_t timer;//usada da função resolverDatas
+time_t timer;//usada na função resolverDatas
 struct tm dLocFusca, dDevFusca, dLocChevette,dDevChevette, dLocKombi, dDevKombi, dLocBelina, dDevBelina, dLocBrasilia, dDevBrasilia;
 
 resolverDatas(struct tm *date1, struct tm *date2, int diasAMais)
