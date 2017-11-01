@@ -744,7 +744,7 @@ void verificarDesconto(float *valor)
 
 void main ()
 {
-	//Utilização de acentos e caracteres da lingua portuguesa	
+	//Utiliza?o de acentos e caracteres da lingua portuguesa	
 	setlocale(LC_ALL, "Portuguese");
 	
 do{
@@ -775,5 +775,4 @@ do{
     while(sair == 1);
       system (" pause ");
 }
-
 
