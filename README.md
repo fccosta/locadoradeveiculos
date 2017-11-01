@@ -28,7 +28,7 @@ Locadora de veículos em linguagem C
 
  -  :white_check_mark: Empresas parceiras terão desconto de 5% no valor total.
 	
- -  :x: Se o cliente contratar 5 diárias ele terá uma sexta diária por cortesia.
+ -  :white_check_mark: Se o cliente contratar 5 diárias ele terá uma sexta diária por cortesia.
 
  -  :white_check_mark: O sistema deverá cobrar ou ter uma função que faça o cálculo por atraso na entrega do veículo e deverá ser calculado proporcionalmente às horas de atraso.
 
