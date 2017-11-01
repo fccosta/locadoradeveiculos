@@ -1,6 +1,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <time.h>
+# include <locale.h>
 
 int Fusca = 1;
 int Chevette = 1;
@@ -743,6 +744,9 @@ void verificarDesconto(float *valor)
 
 void main ()
 {
+	//Utilização de acentos e caracteres da lingua portuguesa	
+	setlocale(LC_ALL, "Portuguese");
+	
 do{
         int menuItem;
         
