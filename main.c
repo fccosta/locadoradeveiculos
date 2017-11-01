@@ -267,20 +267,25 @@ float valorLocacao, x;
 
 void locacaoChevette()
 {
-float valorLocacao, x;
+float valorLocacao;
+int qtdDias, x;
                    
                    logoLegalRentACar();
                    
                    printf ("\t Modelo Escolhido: Chevette.   \n");
                    printf ("\t Valor da diaria: R$ 240,00          \n");//10,00 hr
                    printf ("\t Digite a quantidade de dias de locação:\n");
-                   scanf ("%f",&x);
-                   valorLocacao = 240 * x;
+                   scanf ("%f", &qtdDias);
+	
+                   valorLocacao = 240 * qtdDias;
                                   
                    printf ("\t Valor da locação : R$%.2f \n",valorLocacao );
                    
                    verificarDesconto(&valorLocacao);
-                   resolverDatas(&dLocChevette, &dDevChevette, x);
+	
+		   qtdDias = verificaDiariaGratis(qtdDias);
+	
+                   resolverDatas(&dLocChevette, &dDevChevette, qtdDias);
                    
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
                   
@@ -337,22 +342,25 @@ float valorLocacao, x;
 
 void locacaoKombi()
 {
-float valorLocacao, x;
+float valorLocacao;
+int qtdDias;
                    
                    logoLegalRentACar();
                    
                    printf ("\t Modelo Escolhido: Kombi.\n");
                    printf ("\t Valor da diaria: R$ 240,00    \n"); //10,00 hr
                    printf ("\t Digite a quantidade de dias de locação:\n");
-                   scanf ("%f", &x);
+                   scanf ("%f", &qtdDias);
                 
-                   valorLocacao = 240 * x;             
+                   valorLocacao = 240 * qtdDias;             
                    
                    printf ("\t Valor da locação : R$%.2f \n",valorLocacao );
                    
                    verificarDesconto(&valorLocacao);
-                   
-                   resolverDatas(&dLocKombi, &dDevKombi, x);
+	
+                   qtdDias = verificaDiariaGratis(qtdDias);
+	
+                   resolverDatas(&dLocKombi, &dDevKombi, qtdDias);
                    
                    printf ("\t Para confirmar digite 1 Cancelar 2: \n");
                    scanf ("%f",&x);
@@ -409,21 +417,25 @@ float valorLocacao, x;
 
 void locacaoBelina()
 {
-float valorLocacao, x;
+float valorLocacao;
+int qtdDias;
                    
                    logoLegalRentACar();
                    
                    printf ("\t Modelo Escolhido: Belina.        \n");
                    printf ("\t Valor da diaria: R$ 240,00               \n");// 10,00 hr
                    printf ("\t Digite a quantidade de dias de locação:     \n");
-                   scanf ("%f",&x);               
+                   scanf ("%f", &qtdDias);               
                    
-                   valorLocacao = 240 * x;
+                   valorLocacao = 240 * qtdDias;
                    
                    printf ("\t Valor da locação : R$%.2f \n",valorLocacao );
                    
                    verificarDesconto(&valorLocacao);
-                   resolverDatas(&dLocBelina, &dDevBelina, x);
+	
+                   qtdDias = verificaDiariaGratis(qtdDias);
+	
+	           resolverDatas(&dLocBelina, &dDevBelina, qtdDias);
                    
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
                    scanf ("%f",&x);
@@ -478,22 +490,25 @@ float valorLocacao, x;
 
 void locacaoBrasilia()
 {
-float valorLocacao, x;
+float valorLocacao;
+int qtdDias, x;
                    
                    logoLegalRentACar();
                    
                    printf ("\t Modelo Escolhido: Brasilia.       \n");                   
                    printf ("\t Valor da diaria: R$ 240,00              \n");// 10,00 hr
                    printf ("\t Digite a quantidade de dias de locação:\n");
-                   scanf ("%f",&x);
+                   scanf ("%f", &qtdDias);
                              
-                   valorLocacao = 240 * x;
+                   valorLocacao = 240 * qtdDias;
                    
                    printf ("\t Valor da locação : R$%.2f \n",valorLocacao );
                    
                    verificarDesconto(&valorLocacao);
-                   
-                   resolverDatas(&dLocBrasilia, &dDevBrasilia, x);
+	
+                   qtdDias = verificaDiariaGratis(qtdDias);
+	
+                   resolverDatas(&dLocBrasilia, &dDevBrasilia, qtdDias);
                    
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
                    scanf ("%f",&x);
