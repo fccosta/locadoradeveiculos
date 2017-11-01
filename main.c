@@ -343,7 +343,7 @@ float valorLocacao, x;
 void locacaoKombi()
 {
 float valorLocacao;
-int qtdDias;
+int qtdDias, x;
                    
                    logoLegalRentACar();
                    
@@ -418,7 +418,7 @@ float valorLocacao, x;
 void locacaoBelina()
 {
 float valorLocacao;
-int qtdDias;
+int qtdDias, x;
                    
                    logoLegalRentACar();
                    
