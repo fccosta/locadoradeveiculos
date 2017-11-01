@@ -173,23 +173,41 @@ void verificarAtrasoDevolucao(int valorDiaria )
                 printf("\t NÃO HÁ MULTAS A PAGAR.\n\n");
             }
 }
+
+int verificaDiariaGratis(int x){
+	int opcao;
+	if(x >= 5){
+		printf("Deseja utilizar uma diaria de cortesia? 1 para sim, outro valor para nao");
+		scanf("%d", &opcao);
+		
+		if(opcao == 1){
+			
+			x = x + 1;
+		}
+	}
+	
+	return x;
+}
 void locacaoFusca()
 {
-float valorLocacao, x;
+float valorLocacao;
+int qtdDias, x, teste;
  
                    logoLegalRentACar();                   
                    printf ("\t Modelo Escolhido: Fusca.        \n");
                    printf ("\t Valor da diaria: R$ 240,00                  \n");//10,00 hr
                    printf ("\t Digite a quantidade de dias de locação:\n");
-                   scanf ("%f",&x);
+                   scanf ("%d",&qtdDias);
                    
-                   valorLocacao = 240 * x;
+                   valorLocacao = 240 * qtdDias;
                    
                    printf ("\t Valor da locação : R$%.2f \n\n",valorLocacao );
                    
                    verificarDesconto(&valorLocacao);
                    
-                   resolverDatas(&dLocFusca, &dDevFusca, x);
+                   qtdDias = verificaDiariaGratis(qtdDias);
+                   
+                   resolverDatas(&dLocFusca, &dDevFusca, qtdDias);
                    
                    printf ("\t Para confirma digite 1 Cancelar 2: \n");
      
