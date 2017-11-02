@@ -15,6 +15,15 @@ const int HORA_LOCACAO = 12, LOCACAO = 1, DEVOLUCAO = 0;
 time_t timer;//usada na função resolverDatas
 struct tm dLocFusca, dDevFusca, dLocChevette,dDevChevette, dLocKombi, dDevKombi, dLocBelina, dDevBelina, dLocBrasilia, dDevBrasilia;
 
+/* 
+
+scanfNumero(int *num)
+{
+	scanf("%*[^1234567890] %d",&*num);
+}
+
+*/
+
 resolverDatas(struct tm *date1, struct tm *date2, int diasAMais)
     {
     /* essa função recebe as structs e prenche as variáveis
@@ -91,10 +100,12 @@ int printMenuPrincipal() //imprime o menu principal e retorna a opção escolhid
          
          int x;
          scanf("%i", &x);
+         //scanfNumero(&x);
          if(x<0 ||x>3)
             {
-                system ("cls");
-                printf ("\n\nValor inválido. Por gentileza, digite um valor válido:\n\n");
+                //system ("cls");
+                printf ("\n\n\t Opção Inválida. Por gentileza, digite uma opção válida:\n\n");
+                system("pause");
                 printMenuPrincipal();
             }
          return x;
@@ -115,8 +126,8 @@ int printMenuLocacao() //imprime as opções de veículos
          scanf("%i", &x);
          if(x<0 ||x>5)
             {
-                system ("cls");
-                printf ("\t Valor inválido. Por gentileza, digite um valor válido:\n\n");
+                printf ("\n\n\t Opção Inválida. Por gentileza, digite uma opção válida:\n\n");
+                system("pause");
                 printMenuLocacao();
             }         
          return x;
@@ -152,7 +163,7 @@ void verificarAtrasoDevolucao(int valorDiaria )
 int verificaDiariaGratis(int x){
 	int opcao;
 	if(x >= 5){
-		printf("Deseja utilizar uma diaria de cortesia? 1 para sim, outro valor para nao");
+		printf("Utilizar uma diária de cortesia? 1 para sim, OUTRO NÚMERO para não.\n\n");
 		scanf("%d", &opcao);
 		
 		if(opcao == 1){
@@ -782,7 +793,7 @@ do{
         
 
         
-        printf("\t Menu principal-DIGITE 1 - Sair do programa - DIGITE OUTRO NÚMERO.\n");
+        printf("\t Menu principal-DIGITE 1 - Sair do programa - OUTRO NÚMERO.\n");
         scanf("%i", &sair);
 
         sair = verificarSair(sair);
