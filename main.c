@@ -372,7 +372,7 @@ int qtdDias;
                    resolverDatas(&dLocKombi, &dDevKombi, qtdDias);
                    
                    printf ("\t Para confirmar digite 1 Cancelar 2: \n");
-                   scanf ("%d",&x);
+                   scanf ("%f",&x);
                    
                    x = verificaEntradaUmOuDois((int)x);
 
