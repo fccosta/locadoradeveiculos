@@ -27,32 +27,6 @@ resolverDatas(struct tm *date1, struct tm *date2, int diasAMais)
      */
     
     /*
-     CODIGO ORIGINAL
-     Fonte: http://cssimplified.com/c-programming/write-a-program-in-c-to-add-the-given-number-of-days-to-the-current-date-and-print-the-final-resultant-date-for-e-g-adding-12-days-to-22082005-will-result-in-03092005-10m-dec2005
-     Referência para a criação da função resolveDatas()    
-    #include <time.h>
-    #include <stdio.h>
-    void  main()
-    {
-        struct tm date = {0} ;
-        time_t timer;
-        clrscr();
-        timer=time(NULL);
-        date = *gmtime( &timer ) ;
-        //printf("%s",asctime(localtime(&timer)));
-        printf("%d/%d/%d\n",date.tm_mday-1,date.tm_mon+1,date.tm_year+1900);
-        date.tm_year = date.tm_year;
-        date.tm_mon = date.tm_mon;
-        date.tm_mday = date.tm_mday + 12;
-        timer = mktime( &date ) ;
-        date = *gmtime( &timer ) ;
-        //printf("%s",asctime(localtime(&timer)));
-        printf("%d/%d/%d\n",date.tm_mday-1,date.tm_mon+1,date.tm_year+1900);
-        getch();
-    }
-     */
-    
-    /*
      * é necessário criar as datas como variáveis globais, para cada 
      * carro haverá datas relacionadas a locação e devolução, para
      * chama-las na função, de qualquer lugar do sistema.
@@ -149,9 +123,7 @@ int printMenuLocacao() //imprime as opções de veículos
 }
 
 void printTicket(char* placa, float valor, struct tm *dataLocacao, struct tm *dataDevolucao){
-    
-    //printf("\t FUNÇÃO +++ TICKET +++  SENDO IMPLEMENTADA.\n\n");
-    
+     
     printf("\t======================TICKET DO CLIENTE======================\n");
     printf("\t PLACA DO VEÍCULO:\t\t %s\n",placa);
     printf("\t VALOR DA LOCAÇÃO:\t\t R$ %.2f\n",valor);
@@ -197,9 +169,10 @@ float valorLocacao, x;
 int qtdDias;
  
                    logoLegalRentACar();                   
-                   printf ("\t Modelo Escolhido: Fusca.        \n");
-                   printf ("\t Valor da diaria: R$ 240,00                  \n");//10,00 hr
-                   printf ("\t Digite a quantidade de dias de locação:\n");
+                   printf("\t Modelo Escolhido:\t Fusca        \n");
+                   printf("\t Placa:\t\t\t %s\n",plFusc);
+                   printf("\t Valor da diaria:\t R$ 240,00                  \n");//10,00 hr
+                   printf("\t Digite a quantidade de dias de locação:\n");
                    scanf ("%d",&qtdDias);
                    
                    valorLocacao = 240 * qtdDias;
@@ -277,8 +250,9 @@ int qtdDias;
                    
                    logoLegalRentACar();
                    
-                   printf ("\t Modelo Escolhido: Chevette.   \n");
-                   printf ("\t Valor da diaria: R$ 240,00          \n");//10,00 hr
+                   printf ("\t Modelo Escolhido:\t Chevette   \n");
+                   printf("\t Placa:\t\t\t %s\n",plChev);
+                   printf ("\t Valor da diaria:\t R$ 240,00          \n");//10,00 hr
                    printf ("\t Digite a quantidade de dias de locação:\n");
                    scanf ("%d", &qtdDias);
 	
@@ -356,8 +330,9 @@ int qtdDias;
                    
                    logoLegalRentACar();
                    
-                   printf ("\t Modelo Escolhido: Kombi.\n");
-                   printf ("\t Valor da diaria: R$ 240,00    \n"); //10,00 hr
+                   printf ("\t Modelo Escolhido:\t Kombi\n");
+                   printf("\t Placa:\t\t\t %s\n",plKomb);
+                   printf ("\t Valor da diaria:\t R$ 240,00    \n"); //10,00 hr
                    printf ("\t Digite a quantidade de dias de locação:\n");
                    scanf ("%d", &qtdDias);
                 
@@ -436,8 +411,9 @@ int qtdDias;
                    
                    logoLegalRentACar();
                    
-                   printf ("\t Modelo Escolhido: Belina.        \n");
-                   printf ("\t Valor da diaria: R$ 240,00               \n");// 10,00 hr
+                   printf ("\t Modelo Escolhido:\t Belina        \n");
+                   printf("\t Placa:\t\t\t %s\n",plBeli);
+                   printf ("\t Valor da diaria:\t R$ 240,00               \n");// 10,00 hr
                    printf ("\t Digite a quantidade de dias de locação:     \n");
                    scanf ("%d", &qtdDias);               
                    
@@ -473,7 +449,6 @@ int qtdDias;
                    }
 
  }
-
 
 void devolucaoBelina()
 {
@@ -515,8 +490,9 @@ int qtdDias;
                    
                    logoLegalRentACar();
                    
-                   printf ("\t Modelo Escolhido: Brasilia.       \n");                   
-                   printf ("\t Valor da diaria: R$ 240,00              \n");// 10,00 hr
+                   printf ("\t Modelo Escolhido:\t Brasilia       \n");
+                   printf("\t Placa:\t\t\t %s\n",plBras);                   
+                   printf ("\t Valor da diaria:\t R$ 240,00              \n");// 10,00 hr
                    printf ("\t Digite a quantidade de dias de locação:\n");
                    scanf ("%d", &qtdDias);
                              
@@ -676,7 +652,7 @@ int verificaEntradaUmOuDois(int valor)
     return valor;
 }
 
-int verificarStatusVeiculo(int idMenu, int evento)//carro = nome do veículo; evento = Locação "1", Devolução "0"
+int verificarStatusVeiculo(int idMenu, int evento)//idMenu = identifica o carro; evento = Locação "1", Devolução "0"
 {
     int carro;
     
@@ -759,7 +735,7 @@ void verificarDesconto(float *valor)
     
     while (x<0 || x>2)
         {
-            printf("\t\t Por gentileza, digite 1, 2 ou 0.\n\n");
+            printf("\t Por gentileza, digite 1, 2 ou 0.\n\n");
             scanf("%i", &x);
             //verificarDesconto(valor);//scanf("%i", &valor);
         }
