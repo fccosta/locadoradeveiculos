@@ -275,7 +275,7 @@ int qtdDias, x;
                    printf ("\t Modelo Escolhido: Chevette.   \n");
                    printf ("\t Valor da diaria: R$ 240,00          \n");//10,00 hr
                    printf ("\t Digite a quantidade de dias de locação:\n");
-                   scanf ("%f", &qtdDias);
+                   scanf ("%d", &qtdDias);
 	
                    valorLocacao = 240 * qtdDias;
                                   
@@ -287,8 +287,7 @@ int qtdDias, x;
 	
                    resolverDatas(&dLocChevette, &dDevChevette, qtdDias);
                    
-                   printf ("\t Para confirma digite 1 Cancelar 2: \n");
-                  
+                   printf ("\t Para confirma digite 1 Cancelar 2: \n");                  
                    scanf ("%f",&x);
 
                    x = verificaEntradaUmOuDois((int)x);
@@ -350,7 +349,7 @@ int qtdDias, x;
                    printf ("\t Modelo Escolhido: Kombi.\n");
                    printf ("\t Valor da diaria: R$ 240,00    \n"); //10,00 hr
                    printf ("\t Digite a quantidade de dias de locação:\n");
-                   scanf ("%f", &qtdDias);
+                   scanf ("%d", &qtdDias);
                 
                    valorLocacao = 240 * qtdDias;             
                    
@@ -363,7 +362,7 @@ int qtdDias, x;
                    resolverDatas(&dLocKombi, &dDevKombi, qtdDias);
                    
                    printf ("\t Para confirmar digite 1 Cancelar 2: \n");
-                   scanf ("%f",&x);
+                   scanf ("%d",&x);
                    
                    x = verificaEntradaUmOuDois((int)x);
 
@@ -425,7 +424,7 @@ int qtdDias, x;
                    printf ("\t Modelo Escolhido: Belina.        \n");
                    printf ("\t Valor da diaria: R$ 240,00               \n");// 10,00 hr
                    printf ("\t Digite a quantidade de dias de locação:     \n");
-                   scanf ("%f", &qtdDias);               
+                   scanf ("%d", &qtdDias);               
                    
                    valorLocacao = 240 * qtdDias;
                    
@@ -498,7 +497,7 @@ int qtdDias, x;
                    printf ("\t Modelo Escolhido: Brasilia.       \n");                   
                    printf ("\t Valor da diaria: R$ 240,00              \n");// 10,00 hr
                    printf ("\t Digite a quantidade de dias de locação:\n");
-                   scanf ("%f", &qtdDias);
+                   scanf ("%d", &qtdDias);
                              
                    valorLocacao = 240 * qtdDias;
                    
