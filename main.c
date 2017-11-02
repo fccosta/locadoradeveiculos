@@ -256,7 +256,10 @@ float valorLocacao, x;
                    if(x == 1)
                    {
                         Fusca=1;
-                        printf ("\t DEVOLUÇÃO CONFIRMADA. OBRIGADO. \n\n");
+                        system("cls");
+                        logoLegalRentACar();
+                        printf ("\t DEVOLUÇÃO CONFIRMADA. \n\n");
+                        printf ("\t MODELO EM DEVOLUÇÃO: Fusca. \n\n");
                    }
                    else if (x == 2)
                    {
@@ -295,6 +298,8 @@ int qtdDias, x;
                    if(x == 1)
                    {
                         Chevette=0;
+                        system("cls");
+                        logoLegalRentACar();
                         printf ("\t LOCAÇÃO CONFIRMADA. \n\n"
                                 "\t Modelo Escolhido: Chevette.\n\n");
                         
@@ -327,7 +332,10 @@ float valorLocacao, x;
                    if(x == 1)
                    {
                         Chevette=1;
+                        system("cls");
+                        logoLegalRentACar();
                         printf ("\t DEVOLUÇÃO CONFIRMADA. \n\n");
+                        printf ("\t MODELO EM DEVOLUÇÃO: Chevette. \n\n");
  
                    }
                    else if (x == 2)
@@ -369,6 +377,8 @@ int qtdDias, x;
                    if(x == 1)
                    {
                         Kombi=0;
+                        system("cls");
+                        logoLegalRentACar();
                         printf ("\t LOCAÇÃO CONFIRMADA. \n"
                                 "\t Modelo Escolhido: Kombi.\n\n");
                         
@@ -401,7 +411,10 @@ float valorLocacao, x;
                    if(x == 1)
                    {
                         Kombi=1;
-                        printf ("\t DEVOLUÇÃO CONFIRMADA. \n");
+                        system("cls");
+                        logoLegalRentACar();
+                        printf ("\t DEVOLUÇÃO CONFIRMADA. \n\n");
+                        printf ("\t MODELO EM DEVOLUÇÃO: Kombi. \n\n");
              
                    }
                    else if (x == 2)
@@ -444,6 +457,8 @@ int qtdDias, x;
                    if(x == 1)
                    {
                         Belina=0;
+                        system("cls");
+                        logoLegalRentACar();
                         printf ("\t LOCAÇÃO CONFIRMADA. \n\n"
                                 "\t Modelo Escolhido: Belina.\n\n");
                         
@@ -476,7 +491,11 @@ float valorLocacao, x;
                    if(x == 1)
                    {
                         Belina=1;
+                        system("cls");
+                        logoLegalRentACar();
                         printf ("\t DEVOLUÇÃO CONFIRMADA. \n\n");
+                        printf ("\t MODELO EM DEVOLUÇÃO: Belina. \n\n");
+                        
 
                    }
                    else if (x == 2)
@@ -517,6 +536,8 @@ int qtdDias, x;
                    if(x == 1)
                    {
                         Brasilia=0;
+                        system("cls");
+                        logoLegalRentACar();
                         printf ("\t LOCAÇÃO CONFIRMADA.\n\n"
                                 "\t Modelo Escolhido: Brasilia.\n\n");
                         
@@ -549,7 +570,10 @@ float valorLocacao, x;
                    if(x == 1)
                    {
                         Brasilia=1;
-                        printf ("\t DEVOLUÇÃO CONFIRMADA.\n\n");
+                        system("cls");
+                        logoLegalRentACar();
+                        printf ("\t DEVOLUÇÃO CONFIRMADA. \n\n");
+                        printf ("\t MODELO EM DEVOLUÇÃO: Brasilia. \n\n");
 
                    }
                    else if (x == 2)
