@@ -5,8 +5,8 @@ Locadora de veículos em linguagem C
 
 ## Participantes
 - [@GabrielFiel](https://github.com/GabrielFiel)
--
--
+- [@Francisco Costa](https://github.com/fccosta)
+- [@ClaudiaNunes](https://github.com/Claudianunes)
 -
 -
 -
