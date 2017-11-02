@@ -9,6 +9,7 @@ int Kombi = 1;
 int Belina = 1;
 int Brasilia = 1;
 int sair = 1;
+char plFusc[30]= "FUS2017", plChev[30]= "CHE2017", plKomb[30]="KOM2017",plBeli[30]="BEL2017", plBras[30]="BRA2017";
 const int HORA_LOCACAO = 12, LOCACAO = 1, DEVOLUCAO = 0; 
 
 time_t timer;//usada na função resolverDatas
@@ -147,11 +148,12 @@ int printMenuLocacao() //imprime as opções de veículos
          return x;
 }
 
-void printTicket(float valor, struct tm *dataLocacao, struct tm *dataDevolucao){
+void printTicket(char* placa, float valor, struct tm *dataLocacao, struct tm *dataDevolucao){
     
     //printf("\t FUNÇÃO +++ TICKET +++  SENDO IMPLEMENTADA.\n\n");
     
     printf("\t======================TICKET DO CLIENTE======================\n");
+    printf("\t PLACA DO VEÍCULO:\t\t %s\n",placa);
     printf("\t VALOR DA LOCAÇÃO:\t\t R$ %.2f\n",valor);
     printf("\t DATA LOCAÇAO:\t\t\t %02d/%02d/%d às %d:00h\n",(*dataLocacao).tm_mday,(*dataLocacao).tm_mon+1,(*dataLocacao).tm_year+1900, HORA_LOCACAO);    
     printf("\t DATA DEVOLUÇÃO:\t\t %02d/%02d/%d às %d:00h\n",(*dataDevolucao).tm_mday,(*dataDevolucao).tm_mon+1,(*dataDevolucao).tm_year+1900, HORA_LOCACAO);   
@@ -192,7 +194,7 @@ int verificaDiariaGratis(int x){
 void locacaoFusca()
 {
 float valorLocacao;
-int qtdDias, x, teste;
+int qtdDias, x;
  
                    logoLegalRentACar();                   
                    printf ("\t Modelo Escolhido: Fusca.        \n");
@@ -222,10 +224,10 @@ int qtdDias, x, teste;
                         system("cls");
                         logoLegalRentACar();
                         printf ("\t LOCAÇÃO CONFIRMADA. \n\n"
-                                "\t Modelo Escolhido: Fusca.\n\n");
+                                "\t Modelo Escolhido: FUSCA.\n\n");
                         
                                           
-                        printTicket(valorLocacao, &dLocFusca, &dDevFusca);
+                        printTicket(plFusc, valorLocacao, &dLocFusca, &dDevFusca);
 
                    }
                    else if (x == 2)
@@ -301,9 +303,9 @@ int qtdDias, x;
                         system("cls");
                         logoLegalRentACar();
                         printf ("\t LOCAÇÃO CONFIRMADA. \n\n"
-                                "\t Modelo Escolhido: Chevette.\n\n");
+                                "\t Modelo Escolhido: CHEVETTE.\n\n");
                         
-                        printTicket(valorLocacao, &dLocChevette, &dDevChevette);
+                        printTicket(plChev, valorLocacao, &dLocChevette, &dDevChevette);
                       
                    }
                    else if (x == 2)
@@ -380,9 +382,9 @@ int qtdDias, x;
                         system("cls");
                         logoLegalRentACar();
                         printf ("\t LOCAÇÃO CONFIRMADA. \n"
-                                "\t Modelo Escolhido: Kombi.\n\n");
+                                "\t Modelo Escolhido: KOMBI.\n\n");
                         
-                        printTicket(valorLocacao, &dLocKombi, &dDevKombi);
+                        printTicket(plKomb, valorLocacao, &dLocKombi, &dDevKombi);
 
                    }
                    else if (x == 2)
@@ -460,9 +462,9 @@ int qtdDias, x;
                         system("cls");
                         logoLegalRentACar();
                         printf ("\t LOCAÇÃO CONFIRMADA. \n\n"
-                                "\t Modelo Escolhido: Belina.\n\n");
+                                "\t Modelo Escolhido: BELINA.\n\n");
                         
-                        printTicket(valorLocacao, &dLocBelina, &dDevBelina);
+                        printTicket(plBeli, valorLocacao, &dLocBelina, &dDevBelina);
 
                    }
                    else if (x == 2)
@@ -539,9 +541,9 @@ int qtdDias, x;
                         system("cls");
                         logoLegalRentACar();
                         printf ("\t LOCAÇÃO CONFIRMADA.\n\n"
-                                "\t Modelo Escolhido: Brasilia.\n\n");
+                                "\t Modelo Escolhido: BRASILIA.\n\n");
                         
-                        printTicket(valorLocacao, &dLocBrasilia, &dDevBrasilia);
+                        printTicket(plBras, valorLocacao, &dLocBrasilia, &dDevBrasilia);
 
 
                    }
