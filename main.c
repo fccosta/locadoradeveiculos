@@ -193,8 +193,8 @@ int verificaDiariaGratis(int x){
 }
 void locacaoFusca()
 {
-float valorLocacao;
-int qtdDias, x;
+float valorLocacao, x;
+int qtdDias;
  
                    logoLegalRentACar();                   
                    printf ("\t Modelo Escolhido: Fusca.        \n");
@@ -272,8 +272,8 @@ float valorLocacao, x;
 
 void locacaoChevette()
 {
-float valorLocacao;
-int qtdDias, x;
+float valorLocacao, x;
+int qtdDias;
                    
                    logoLegalRentACar();
                    
@@ -351,8 +351,8 @@ float valorLocacao, x;
 
 void locacaoKombi()
 {
-float valorLocacao;
-int qtdDias, x;
+float valorLocacao, x;
+int qtdDias;
                    
                    logoLegalRentACar();
                    
@@ -431,8 +431,8 @@ float valorLocacao, x;
 
 void locacaoBelina()
 {
-float valorLocacao;
-int qtdDias, x;
+float valorLocacao, x;
+int qtdDias;
                    
                    logoLegalRentACar();
                    
@@ -510,8 +510,8 @@ float valorLocacao, x;
 
 void locacaoBrasilia()
 {
-float valorLocacao;
-int qtdDias, x;
+float valorLocacao, x;
+int qtdDias;
                    
                    logoLegalRentACar();
                    
