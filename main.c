@@ -148,7 +148,7 @@ void verificarAtrasoDevolucao(int valorDiaria )
 {
     int aux;
     float multa;
-    printf("\n\t Horas de atraso na entrega(se não houve atraso digite 0):\n\n");
+    printf("\n\t Horas de atraso na entrega:(se não houve atraso digite 0)\n\n");
     scanf("%d", &aux);
     if(aux > 0)
         {
@@ -163,7 +163,7 @@ void verificarAtrasoDevolucao(int valorDiaria )
 int verificaDiariaGratis(int x){
 	int opcao;
 	if(x >= 5){
-		printf("Utilizar uma diária de cortesia? 1 para sim, OUTRO NÚMERO para não.\n\n");
+		printf("\t Uma diária de cortesia? 1 - sim, OUTRO NÚMERO - não.\n\n");
 		scanf("%d", &opcao);
 		
 		if(opcao == 1){
@@ -728,7 +728,18 @@ int verificarSair(int x ){
             printf ("\t=============================================================\n");
             printf ("\t=====================PROGRAMA FINALIZADO=====================\n");
             printf ("\t=============================================================\n\n");
+            printf("\t\t\t Desenvolvedores:\n\n");
+            //printf("\t Cecília \t\t – RA 1773831\n");
+            printf("\t\t\t Cláudia \t  RA 1717772 \n");
+            printf("\t\t\t Francisco \t  RA 1727928 \n");
+            printf("\t\t\t Gabriel \t  RA 1761699 \n");
+            printf("\t\t\t Hyago \t\t  RA 1755286 \n\n");
+            //printf("\t Paulo \t\t – RA 1753969 \n\n\n\n\n\n");
+            printf ("\t=============================================================\n");
+            printf ("\t=====================PROGRAMA FINALIZADO=====================\n");
+            printf ("\t=============================================================\n\n");
             printf ("\n\n\n");
+            
             return 0;
     }
        
