@@ -729,12 +729,11 @@ int verificarSair(int x ){
             printf ("\t=====================PROGRAMA FINALIZADO=====================\n");
             printf ("\t=============================================================\n\n");
             printf("\t\t\t Desenvolvedores:\n\n");
-            //printf("\t Cecília \t\t – RA 1773831\n");
             printf("\t\t\t Cláudia \t  RA 1717772 \n");
+	    printf("\t Dani \t\t – RA 1762176\n");
             printf("\t\t\t Francisco \t  RA 1727928 \n");
             printf("\t\t\t Gabriel \t  RA 1761699 \n");
             printf("\t\t\t Hyago \t\t  RA 1755286 \n\n");
-            //printf("\t Paulo \t\t – RA 1753969 \n\n\n\n\n\n");
             printf ("\t=============================================================\n");
             printf ("\t=====================PROGRAMA FINALIZADO=====================\n");
             printf ("\t=============================================================\n\n");
